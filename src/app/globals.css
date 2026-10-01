@@ -1,0 +1,84 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-heading: var(--font-bricolage), Arial, sans-serif;
+  --font-sans: var(--font-fira-code), monospace;
+}
+
+/* Screenshot-derived design tokens. */
+@theme {
+  --color-background: #f8f9fc;
+  --color-foreground: #24232d;
+  --color-muted: #64616f;
+  --color-border: #cdccd1;
+  --color-divider: #ececf1;
+  --color-accent: #7351ce;
+  --color-focus: #7351ce;
+  --color-surface: #ffffff;
+  --spacing-page-gutter: clamp(1rem, 3.125vw, 2.5rem);
+  --spacing-section: clamp(3rem, 8vw, 6rem);
+  --spacing-intro-top: clamp(2.5rem, 5vw, 4rem);
+  --spacing-intro-bottom: clamp(2.5rem, 4.375vw, 3.5rem);
+  --spacing-consultation-top: clamp(4rem, 11.25vw, 9rem);
+  --spacing-consultation-bottom: clamp(4rem, 9.375vw, 7.5rem);
+  --spacing-footer-top: clamp(2rem, 5vw, 4rem);
+  --container-page: 70rem;
+  --container-consultation: 20rem;
+  --text-intro: 1.25rem;
+  --text-intro--line-height: 1.7;
+  --text-consultation: 2.5rem;
+  --text-consultation--line-height: 1.2;
+  --text-footer: 0.6875rem;
+}
+
+@layer base {
+  body { @apply bg-background font-sans text-foreground antialiased; }
+  h1, h2, h3, h4, h5, h6 { @apply font-heading; }
+  a { text-underline-offset: 0.25em; }
+  a:focus-visible { @apply outline-2 outline-offset-4 outline-focus; }
+}
+
+@layer components {
+  .site-header { @apply border-b border-divider; }
+  .header-content { @apply flex min-h-16 flex-wrap items-center justify-between gap-x-6 gap-y-4 py-4; }
+  .site-identity { @apply flex items-center gap-6 text-sm font-semibold; }
+  .header-nav { @apply flex flex-wrap items-center gap-x-5 gap-y-3 text-sm font-semibold md:gap-x-8; }
+  .header-nav a:hover { @apply underline; }
+  .resume-link { @apply inline-flex items-center gap-2; }
+  .resume-link svg { @apply size-5; }
+  .home-intro { @apply pt-intro-top pb-intro-bottom text-center; }
+  .home-intro h1, .home-intro p { @apply font-sans text-base font-normal leading-relaxed md:text-intro; }
+  .home-intro p { @apply mt-1; }
+  .home-projects { @apply scroll-mt-6; }
+  .project-filter-preview { @apply mb-6; }
+  .filter-list { @apply flex flex-wrap gap-2.5; }
+  .filter-label { @apply border border-border px-3 py-0.5 text-sm leading-tight md:text-base; }
+  .filter-label-selected { @apply border-foreground bg-foreground text-surface; }
+  .project-grid { @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3; }
+  .project-card { @apply min-w-0; }
+  .consultation { @apply pt-consultation-top pb-consultation-bottom text-center; }
+  .consultation h2 { @apply text-3xl font-bold md:text-consultation; }
+  .consultation-stage { @apply relative mt-10; }
+  .consultation-card { @apply relative z-10 mx-auto w-full max-w-consultation border-2 border-foreground bg-surface p-6 text-left sm:p-7; }
+  .consultation-mark { @apply font-heading text-4xl font-bold; }
+  .consultation-card h3 { @apply mt-5 mb-8 font-sans text-xl font-semibold; }
+  .consultation-detail { @apply flex items-start gap-2 text-sm font-semibold leading-snug sm:text-base; }
+  .detail-icon { @apply mt-0.5 size-4 shrink-0; }
+  .consultation-details { @apply mt-6 space-y-5 text-sm font-semibold sm:text-base; }
+  .consultation-details li { @apply flex items-start gap-2; }
+  .consultation-decoration { @apply pointer-events-none absolute inset-0 hidden overflow-hidden lg:block; }
+  .decoration-tile { @apply absolute flex size-28 items-center justify-center border-2 border-border bg-surface font-heading text-4xl font-bold text-muted blur-sm; }
+  .tile-left-one { left: 6%; top: 38%; filter: blur(5px); }
+  .tile-left-two { left: 20%; top: 38%; }
+  .tile-left-three { left: 20%; top: 72%; filter: blur(5px); }
+  .tile-right-one { right: 20%; top: 4%; filter: blur(5px); }
+  .tile-right-two { right: 20%; top: 38%; }
+  .tile-right-three { right: 6%; top: 38%; filter: blur(5px); }
+  .consultation-link { @apply mt-10 inline-block rounded-sm bg-surface px-6 py-2 text-lg sm:text-xl; }
+  a.consultation-link:hover { @apply underline; }
+  .site-footer { @apply pt-footer-top pb-10; }
+  .footer-content { @apply flex flex-wrap items-center gap-x-5 gap-y-3 text-footer; }
+  .footer-content li { @apply inline-flex items-center gap-2; }
+  .footer-content li + li::before { @apply hidden h-3 border-l border-foreground pr-5 sm:block; content: ""; }
+  .footer-content svg { @apply size-4; }
+}
