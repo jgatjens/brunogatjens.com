@@ -37,7 +37,7 @@ export default function HomePage() {
       <section id="projects" className="scroll-mt-6" aria-label="Projects">
         <ProjectFilter projects={projects} categoryLabels={projectCategoryLabels} />
       </section>
-      <ConsultationCTA email="gatjensb@gmail.com" />
+      <ConsultationCTA email="https://calendly.com/gatjensb/30min" />
     </PageContainer>
   );
 }

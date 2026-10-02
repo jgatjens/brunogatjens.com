@@ -49,6 +49,14 @@
 }
 
 @layer base {
+  body:has([data-project-theme="dark"]) {
+    --color-background: #22212c;
+    --color-foreground: #f8f9fc;
+    --color-muted: #cdccd1;
+    --color-divider: #64616f;
+    --color-focus: #ae98ff;
+    --color-copyright: #f8f9fc;
+  }
   body { @apply bg-background font-sans text-foreground antialiased; }
   h1, h2, h3, h4, h5, h6 { @apply font-heading; }
   a { text-underline-offset: 0.25em; }

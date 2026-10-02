@@ -16,8 +16,8 @@ export function ProjectCard({ project }: { project: Project }) {
 
   return (
     <li className="min-w-0">
-      {project.slug === "ui-props" ? (
-        <Link href="/projects/ui-props" aria-label="View UI & Props project" className="block">
+      {project.detailHref ? (
+        <Link href={project.detailHref} aria-label={`View ${project.title} project`} className="block">
           {artwork}
         </Link>
       ) : artwork}

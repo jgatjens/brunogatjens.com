@@ -27,11 +27,26 @@ export type ProjectDetailData = {
   slug: string;
   title: string;
   introduction?: string;
+  theme?: "dark";
+  gallery?: readonly ProjectArtworkData[];
   sections: readonly ProjectSectionData[];
 };
 
 // Introduction and external URLs remain omitted pending approved copy.
 export const projectDetails: readonly ProjectDetailData[] = [
+  {
+    slug: "luminus",
+    title: "The World of Luminus",
+    theme: "dark",
+    introduction: "The World of Luminus is a cosmic-fantasy brand featuring vibrant neon palettes, glowing holographic effects, luminous gradients, and mystical symbols. Its visual identity blends theatrical scenography with dark, ethereal atmospheres to evoke wonder, energy, and euphoria.",
+    sections: [],
+    gallery: [
+      { id: "luminus-logo", src: "/images/projects/luminus/luminus-01.png", alt: "Project Luminus lettering framed by neon foliage and butterflies", width: 2080, height: 1302 },
+      { id: "luminus-characters", src: "/images/projects/luminus/luminus-02.png", alt: "Neon animal musicians surrounded by cosmic symbols and foliage", width: 2080, height: 1506 },
+      { id: "luminus-video-preview", src: "/images/projects/luminus/luminus-03.png", alt: "Static preview of The World of Luminus video", width: 2080, height: 1151 },
+      { id: "luminus-poster", src: "/images/projects/luminus/luminus-04.png", alt: "Luminus: The Mystic Forest poster with colorful foliage, animal musicians, and a glowing fountain", width: 2080, height: 3275 },
+    ],
+  },
   {
     "slug": "ui-props",
     "title": "UI & Props",

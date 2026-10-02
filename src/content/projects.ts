@@ -10,6 +10,7 @@ export type Project = {
   coverImageHeight: number;
   description?: string;
   year?: number;
+  detailHref?: string;
 };
 
 export const projectCategoryLabels: Record<ProjectCategory, string> = {
@@ -61,6 +62,7 @@ export const projects: readonly Project[] = [
   },
   {
     slug: "luminus",
+    detailHref: "/projects/luminus",
     title: "Luminus",
     categories: ["brand"],
     coverImage: "/images/projects/luminus-tile.png",
@@ -70,6 +72,7 @@ export const projects: readonly Project[] = [
   },
   {
     slug: "ui-props",
+    detailHref: "/projects/ui-props",
     title: "UI / Props",
     categories: ["ui-props"],
     coverImage: "/images/projects/ui-props-tile.png",

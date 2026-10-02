@@ -24,7 +24,7 @@ export function ConsultationCTA({ email }: { email?: string }) {
           </ul>
         </div>
       </div>
-      {email ? <a className="mt-consultation-inner inline-block rounded-sm bg-surface px-6 py-2 text-lg hover:underline sm:text-xl" href={`mailto:${email}`} aria-label="Email Bruno to discuss a free consultation">LET&apos;S TALK</a> : <span className="mt-consultation-inner inline-block rounded-sm bg-surface px-6 py-2 text-lg sm:text-xl" aria-disabled="true">LET&apos;S TALK<span className="sr-only"> — contact link awaiting confirmation</span></span>}
+      {email ? <a target="_blank" className="mt-consultation-inner inline-block rounded-sm bg-surface px-6 py-2 text-lg hover:underline sm:text-xl" href={`${email}`} aria-label="Email Bruno to discuss a free consultation">LET&apos;S TALK</a> : <span className="mt-consultation-inner inline-block rounded-sm bg-surface px-6 py-2 text-lg sm:text-xl" aria-disabled="true">LET&apos;S TALK<span className="sr-only"> — contact link awaiting confirmation</span></span>}
     </section>
   );
 }

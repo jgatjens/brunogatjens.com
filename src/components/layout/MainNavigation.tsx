@@ -15,7 +15,7 @@ export function MainNavigation() {
           {label}
         </Link>
       ))}
-      <a href="https://drive.google.com/open?id=1m9q1cGma0pVq_xxAVRi0VOL3H94wVb-3&usp=drive_fs" className="inline-flex items-center gap-2 hover:underline"><ResumeIcon className="size-5" />Resume</a>
+      <a href="https://drive.google.com/open?id=1m9q1cGma0pVq_xxAVRi0VOL3H94wVb-3&usp=drive_fs" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 hover:underline"><ResumeIcon className="size-5" />Resume</a>
     </nav>
   );
 }
