@@ -8,7 +8,7 @@ const layouts: Record<ProjectImageLayout, { className: string; sizes: string }> 
   },
   "columns-4": {
     className: "project-images-four",
-    sizes: "(min-width: 1120px) 242px, (min-width: 1024px) 23vw, (min-width: 512px) 46vw, calc((100vw - 48px) / 2)",
+    sizes: "(min-width: 1120px) 212px, (min-width: 1024px) 21vw, (min-width: 512px) 46vw, calc((100vw - 48px) / 2)",
   },
   "columns-3": {
     className: "project-images-three",
@@ -25,7 +25,7 @@ export function ProjectImageGroup({ group }: { group: ProjectImageGroupData }) {
   const layout = layouts[group.layout];
 
   return (
-    <div className={`project-image-group ${layout.className}`}>
+    <div className={`project-image-group ${layout.className} ${group.compact ? "project-images-compact" : ""} ${group.spacing ? `project-group-${group.spacing}` : ""}`}>
       {group.images.map((artwork) => (
         <div key={artwork.id} className={`flex min-w-0 justify-center ${group.compact ? "items-end" : "items-center"}`}>
           <ProjectArtwork artwork={artwork} sizes={layout.sizes} compact={group.compact} />

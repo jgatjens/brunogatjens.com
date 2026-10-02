@@ -19,6 +19,9 @@
   --spacing-section: clamp(3rem, 8vw, 6rem);
   --spacing-project-image-gap: clamp(1rem, 1.875vw, 1.5rem);
   --spacing-project-group-gap: clamp(2rem, 5vw, 4rem);
+  --spacing-project-related-gap: clamp(1.5rem, 2.5vw, 2rem);
+  --spacing-project-spacious-gap: clamp(3rem, 10vw, 8rem);
+  --spacing-project-prop-gap: clamp(1rem, 5vw, 4rem);
   --spacing-intro-top: clamp(2.5rem, 4.609375vw, 3.6875rem);
   --spacing-intro-bottom: clamp(2.5rem, 4.0625vw, 3.25rem);
   --spacing-intro-paragraph: 0rem;
@@ -71,12 +74,17 @@
   .project-grid { @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3; }
   .project-card { @apply min-w-0; }
   .project-detail-sections { @apply mt-section space-y-section; }
-  .project-section-title { @apply border-l border-muted pl-6 text-xl font-semibold sm:text-2xl; }
+  .project-detail-page { @apply py-section lg:pt-20; }
+  .project-section-title { @apply border-l border-muted pl-6 text-xl font-semibold sm:text-2xl lg:pl-10 lg:text-4xl lg:leading-tight; }
   .project-section-link { @apply mt-3 inline-block max-w-full break-words text-sm underline decoration-1 underline-offset-2; }
-  .project-artwork-stack { @apply mt-8 space-y-project-group-gap sm:mt-12; }
+  .project-artwork-stack { @apply mt-8 flex flex-col sm:mt-12; }
   .project-image-group { @apply grid min-w-0 gap-project-image-gap; }
+  .project-image-group + .project-image-group { @apply mt-project-group-gap; }
+  .project-image-group + .project-group-related { @apply mt-project-related-gap; }
+  .project-image-group + .project-group-spacious { @apply mt-project-spacious-gap; }
+  .project-images-compact.project-images-four { @apply mx-auto w-full max-w-176 gap-x-project-image-gap; }
   .project-images-full { @apply grid-cols-1; }
-  .project-images-four { @apply grid-cols-2 lg:grid-cols-4; }
+  .project-images-four { @apply grid-cols-2 lg:grid-cols-4 lg:gap-x-project-prop-gap; }
   .project-images-three { @apply grid-cols-1 md:grid-cols-2 lg:grid-cols-3; }
   .project-images-six { @apply grid-cols-2 md:grid-cols-3 lg:grid-cols-6; }
   .info-page { @apply grid gap-8 py-section lg:grid-cols-[minmax(0,1fr)_19.75rem] lg:gap-x-12 lg:gap-y-12 lg:pt-20; }

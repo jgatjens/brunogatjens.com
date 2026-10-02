@@ -4,7 +4,7 @@ import { ProjectSection } from "./ProjectSection";
 
 export function ProjectDetail({ project }: { project: ProjectDetailData }) {
   return (
-    <PageContainer className="py-section">
+    <PageContainer className="project-detail-page">
       <h1 className="text-4xl font-bold sm:text-5xl">{project.title}</h1>
       {project.introduction && <p className="mt-6 leading-relaxed">{project.introduction}</p>}
       <div className="project-detail-sections">

@@ -12,6 +12,7 @@ export type ProjectImageGroupData = {
   id: string;
   layout: ProjectImageLayout;
   compact?: boolean;
+  spacing?: "related" | "spacious";
   images: readonly ProjectArtworkData[];
 };
 
@@ -101,6 +102,7 @@ export const projectDetails: readonly ProjectDetailData[] = [
           },
           {
             "id": "nexomon-4",
+            "spacing": "spacious",
             "layout": "full",
             "images": [
               {
@@ -159,6 +161,7 @@ export const projectDetails: readonly ProjectDetailData[] = [
           },
           {
             "id": "plants-1",
+            "spacing": "related",
             "layout": "columns-4",
             "images": [
               {
@@ -207,6 +210,7 @@ export const projectDetails: readonly ProjectDetailData[] = [
           },
           {
             "id": "plants-2",
+            "spacing": "related",
             "layout": "columns-6",
             "images": [
               {
