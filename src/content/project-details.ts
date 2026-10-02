@@ -4,6 +4,7 @@ export type ProjectArtworkData = {
   width: number;
   height: number;
   src: string;
+  link?: { href: string; label: string; newTab?: boolean };
 };
 
 export type ProjectImageLayout = "full" | "columns-3" | "columns-4" | "columns-6";
@@ -43,7 +44,7 @@ export const projectDetails: readonly ProjectDetailData[] = [
     gallery: [
       { id: "luminus-logo", src: "/images/projects/luminus/luminus-01.png", alt: "Project Luminus lettering framed by neon foliage and butterflies", width: 2080, height: 1302 },
       { id: "luminus-characters", src: "/images/projects/luminus/luminus-02.png", alt: "Neon animal musicians surrounded by cosmic symbols and foliage", width: 2080, height: 1506 },
-      { id: "luminus-video-preview", src: "/images/projects/luminus/luminus-03.png", alt: "Static preview of The World of Luminus video", width: 2080, height: 1151 },
+      { id: "luminus-video-preview", src: "/images/projects/luminus/luminus-03.png", alt: "Preview of The World of Luminus video", width: 2080, height: 1151, link: { href: "https://youtu.be/P1-f7cTawWc?si=RztSgqBg3UUAHJ0N", label: "Watch The World of Luminus on YouTube (opens in a new tab)", newTab: true } },
       { id: "luminus-poster", src: "/images/projects/luminus/luminus-04.png", alt: "Luminus: The Mystic Forest poster with colorful foliage, animal musicians, and a glowing fountain", width: 2080, height: 3275 },
     ],
   },

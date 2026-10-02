@@ -12,7 +12,15 @@ export function ProjectDetail({ project }: { project: ProjectDetailData }) {
           <p className="text-sm leading-tight sm:text-base">{project.introduction}</p>
           <div className="mt-12 space-y-12 sm:mt-20 sm:space-y-20 lg:mt-24 lg:space-y-24">
             {project.gallery.map((artwork) => (
-              <ProjectArtwork key={artwork.id} artwork={artwork} sizes="(min-width: 1120px) 1040px, (min-width: 512px) 93.75vw, calc(100vw - 32px)" />
+              artwork.link ? (
+                <a key={artwork.id} href={artwork.link.href} aria-label={artwork.link.label}
+                  target={artwork.link.newTab ? "_blank" : undefined}
+                  rel={artwork.link.newTab ? "noopener noreferrer" : undefined} className="block">
+                  <ProjectArtwork artwork={artwork} sizes="(min-width: 1120px) 1040px, (min-width: 512px) 93.75vw, calc(100vw - 32px)" />
+                </a>
+              ) : (
+                <ProjectArtwork key={artwork.id} artwork={artwork} sizes="(min-width: 1120px) 1040px, (min-width: 512px) 93.75vw, calc(100vw - 32px)" />
+              )
             ))}
           </div>
         </article>
