@@ -17,6 +17,8 @@
   --color-surface: #ffffff;
   --spacing-page-gutter: clamp(1rem, 3.125vw, 2.5rem);
   --spacing-section: clamp(3rem, 8vw, 6rem);
+  --spacing-project-image-gap: clamp(1rem, 1.875vw, 1.5rem);
+  --spacing-project-group-gap: clamp(2rem, 5vw, 4rem);
   --spacing-intro-top: clamp(2.5rem, 4.609375vw, 3.6875rem);
   --spacing-intro-bottom: clamp(2.5rem, 4.0625vw, 3.25rem);
   --spacing-intro-paragraph: 0rem;
@@ -68,6 +70,21 @@
   .filter-label-selected { @apply border-foreground bg-foreground text-surface; }
   .project-grid { @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3; }
   .project-card { @apply min-w-0; }
+  .project-detail-sections { @apply mt-section space-y-section; }
+  .project-section-title { @apply border-l border-muted pl-6 text-xl font-semibold sm:text-2xl; }
+  .project-section-link { @apply mt-3 inline-block max-w-full break-words text-sm underline decoration-1 underline-offset-2; }
+  .project-artwork-stack { @apply mt-8 space-y-project-group-gap sm:mt-12; }
+  .project-image-group { @apply grid min-w-0 gap-project-image-gap; }
+  .project-images-full { @apply grid-cols-1; }
+  .project-images-four { @apply grid-cols-2 lg:grid-cols-4; }
+  .project-images-three { @apply grid-cols-1 md:grid-cols-2 lg:grid-cols-3; }
+  .project-images-six { @apply grid-cols-2 md:grid-cols-3 lg:grid-cols-6; }
+  .info-page { @apply grid gap-8 py-section lg:grid-cols-[minmax(0,1fr)_19.75rem] lg:gap-x-12 lg:gap-y-12 lg:pt-20; }
+  .info-title { @apply text-4xl font-bold leading-tight sm:text-5xl lg:col-start-1 lg:row-start-1; }
+  .info-content { display: contents; }
+  .info-portrait { @apply mx-auto h-auto w-full max-w-79 rounded-full lg:col-start-2 lg:row-span-2 lg:row-start-1; }
+  .info-biography { @apply min-w-0 space-y-6 text-base leading-relaxed lg:col-start-1 lg:row-start-2 lg:leading-[1.3125]; }
+  .info-social { @apply min-w-0 lg:col-span-2 lg:row-start-3; }
   .consultation { @apply pt-consultation-top pb-consultation-bottom text-center; }
   .consultation h2 { @apply text-consultation font-bold; }
   .consultation-stage { @apply relative mt-consultation-inner; }
