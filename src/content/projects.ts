@@ -26,7 +26,7 @@ export const projects: readonly Project[] = [
   {
     slug: "zonda-live",
     title: "Zonda Live",
-    categories: ["brand"],
+    categories: ["case-study"],
     coverImage: "/images/projects/zonda-live-tile.png",
     coverImageAlt: "Zonda Live project artwork",
     coverImageWidth: 694,
@@ -44,7 +44,7 @@ export const projects: readonly Project[] = [
   {
     slug: "envision",
     title: "Envision",
-    categories: ["ui-props"],
+    categories: ["case-study"],
     coverImage: "/images/projects/envision-tile.png",
     coverImageAlt: "Envision project artwork",
     coverImageWidth: 694,
@@ -53,7 +53,7 @@ export const projects: readonly Project[] = [
   {
     slug: "synapse",
     title: "Synapse",
-    categories: ["brand"],
+    categories: ["case-study"],
     coverImage: "/images/projects/synapse-tile.png",
     coverImageAlt: "Synapse project artwork",
     coverImageWidth: 694,
@@ -62,7 +62,7 @@ export const projects: readonly Project[] = [
   {
     slug: "luminus",
     title: "Luminus",
-    categories: ["case-study"],
+    categories: ["brand"],
     coverImage: "/images/projects/luminus-tile.png",
     coverImageAlt: "Luminus project artwork",
     coverImageWidth: 694,
