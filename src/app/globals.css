@@ -35,7 +35,7 @@
   body { @apply bg-background font-sans text-foreground antialiased; }
   h1, h2, h3, h4, h5, h6 { @apply font-heading; }
   a { text-underline-offset: 0.25em; }
-  a:focus-visible { @apply outline-2 outline-offset-4 outline-focus; }
+  a:focus-visible, button:focus-visible { @apply outline-2 outline-offset-4 outline-focus; }
 }
 
 @layer components {
@@ -50,9 +50,9 @@
   .home-intro h1, .home-intro p { @apply font-sans text-base font-normal leading-relaxed md:text-intro; }
   .home-intro p { @apply mt-1; }
   .home-projects { @apply scroll-mt-6; }
-  .project-filter-preview { @apply mb-6; }
+  .project-filter-controls { @apply mb-6; }
   .filter-list { @apply flex flex-wrap gap-2.5; }
-  .filter-label { @apply border border-border px-3 py-0.5 text-sm leading-tight md:text-base; }
+  .filter-label { @apply min-h-6 cursor-pointer border border-border px-3 py-0.5 text-sm leading-tight md:text-base; }
   .filter-label-selected { @apply border-foreground bg-foreground text-surface; }
   .project-grid { @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3; }
   .project-card { @apply min-w-0; }

@@ -1,13 +1,14 @@
 import Image from "next/image";
+import type { Project } from "@/content/projects";
 
-export function ProjectCard({ name, src }: { name: string; src: string }) {
+export function ProjectCard({ project }: { project: Project }) {
   return (
     <li className="project-card">
       <Image
-        src={src}
-        alt={`${name} project artwork`}
-        width={694}
-        height={694}
+        src={project.coverImage}
+        alt={project.coverImageAlt}
+        width={project.coverImageWidth}
+        height={project.coverImageHeight}
         sizes="(min-width: 1120px) 347px, (min-width: 1024px) 31vw, (min-width: 768px) 47vw, 94vw"
         className="block h-auto w-full"
       />

@@ -10,6 +10,10 @@ const firaCode = Fira_Code({ subsets: ["latin"], variable: "--font-fira-code", d
 export const metadata: Metadata = {
   title: { default: "Bruno Gätjens — UX/UI Designer / Illustrator", template: "%s | Bruno Gätjens" },
   description: "Portfolio of Bruno Gätjens, UX/UI Designer and Illustrator.",
+  icons: {
+    icon: { url: "/icon.png", type: "image/png", sizes: "64x64" },
+    shortcut: "/icon.png",
+  },
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
