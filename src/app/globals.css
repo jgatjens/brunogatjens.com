@@ -17,13 +17,15 @@
   --color-surface: #ffffff;
   --spacing-page-gutter: clamp(1rem, 3.125vw, 2.5rem);
   --spacing-section: clamp(3rem, 8vw, 6rem);
-  --spacing-intro-top: clamp(2.5rem, 5vw, 4rem);
-  --spacing-intro-bottom: clamp(2.5rem, 4.375vw, 3.5rem);
+  --spacing-intro-top: clamp(2.5rem, 4.609375vw, 3.6875rem);
+  --spacing-intro-bottom: clamp(2.5rem, 4.0625vw, 3.25rem);
+  --spacing-intro-paragraph: 0rem;
+  --spacing-header-inset: 0.75rem;
   --spacing-consultation-top: clamp(4rem, 11.25vw, 9rem);
-  --spacing-consultation-bottom: clamp(3rem, 9.375vw, 7.5rem);
+  --spacing-consultation-bottom: clamp(3rem, 7.8125vw, 6.25rem);
   --spacing-filter-grid: clamp(1rem, 1.875vw, 1.5rem);
   --spacing-filter-target: 2.75rem;
-  --spacing-filter-target-desktop: 1.625rem;
+  --spacing-filter-target-desktop: 1.75rem;
   --spacing-consultation-inner: clamp(2rem, 3.125vw, 2.5rem);
   --spacing-consultation-padding: clamp(1.5rem, 1.25rem + 0.625vw, 1.75rem);
   --spacing-footer-top: clamp(2rem, 5vw, 4rem);
@@ -36,6 +38,9 @@
   --text-consultation-body: clamp(0.875rem, 0.75rem + 0.3125vw, 1rem);
   --text-consultation-body--line-height: 1.375;
   --text-footer: 0.6875rem;
+  --text-header: 1rem;
+  --text-filter-desktop: 1.0625rem;
+  --text-filter-desktop--line-height: 1.25;
 }
 
 @layer base {
@@ -48,18 +53,18 @@
 @layer components {
   .site-header { @apply border-b border-divider; }
   .header-content { @apply flex min-h-16 flex-wrap items-center justify-between gap-x-6 gap-y-4 py-4; }
-  .site-identity { @apply flex items-center gap-6 text-sm font-semibold; }
-  .header-nav { @apply flex flex-wrap items-center gap-x-5 gap-y-3 text-sm font-semibold md:gap-x-8; }
+  .site-identity { @apply flex items-center gap-6 text-sm font-semibold lg:ml-header-inset lg:text-header; }
+  .header-nav { @apply flex flex-wrap items-center gap-x-5 gap-y-3 text-sm font-semibold md:gap-x-8 lg:mr-header-inset lg:text-header; }
   .header-nav a:hover { @apply underline; }
   .resume-link { @apply inline-flex items-center gap-2; }
   .resume-link svg { @apply size-5; }
   .home-intro { @apply pt-intro-top pb-intro-bottom text-center; }
   .home-intro h1, .home-intro p { @apply font-sans text-intro font-normal; }
-  .home-intro p { @apply mt-1; }
+  .home-intro p { @apply mt-intro-paragraph; }
   .home-projects { @apply scroll-mt-6; }
   .project-filter-controls { @apply mb-filter-grid; }
   .filter-list { @apply flex flex-wrap gap-2.5; }
-  .filter-label { @apply min-h-filter-target cursor-pointer border border-border px-3 py-0.5 text-sm leading-tight md:text-base lg:min-h-filter-target-desktop; }
+  .filter-label { @apply min-h-filter-target cursor-pointer border border-border px-3 py-0.5 text-sm leading-tight md:text-base lg:min-h-filter-target-desktop lg:text-filter-desktop; }
   .filter-label-selected { @apply border-foreground bg-foreground text-surface; }
   .project-grid { @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3; }
   .project-card { @apply min-w-0; }
