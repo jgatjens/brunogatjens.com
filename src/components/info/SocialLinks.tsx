@@ -9,7 +9,7 @@ const socialLinks = [
 
 export function SocialLinks() {
   return (
-    <nav aria-label="Social links" className="info-social">
+    <nav aria-label="Social links" className="min-w-0 lg:col-span-2 lg:row-start-3">
       <ul className="flex flex-wrap gap-x-6 gap-y-2">
         {socialLinks.map(({ icon: Icon, label, href }) => (
           <li key={href}>

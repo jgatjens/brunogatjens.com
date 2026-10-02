@@ -23,14 +23,14 @@ export function ProjectFilter({ projects, categoryLabels }: ProjectFilterProps) 
 
   return (
     <>
-      <div className="project-filter-controls" role="group" aria-label="Filter projects">
-        <ul className="filter-list">
+      <div className="mb-filter-grid" role="group" aria-label="Filter projects">
+        <ul className="flex flex-wrap gap-2.5">
           {options.map(({ value, label }) => (
             <li key={value}>
               <button
                 type="button"
                 aria-pressed={activeFilter === value}
-                className={activeFilter === value ? "filter-label filter-label-selected" : "filter-label"}
+                className={`min-h-filter-target cursor-pointer border px-3 py-0.5 text-sm leading-tight md:text-base lg:min-h-filter-target-desktop lg:text-filter-desktop ${activeFilter === value ? "border-foreground bg-foreground text-surface" : "border-border"}`}
                 onClick={() => setActiveFilter(value)}
               >
                 {label}

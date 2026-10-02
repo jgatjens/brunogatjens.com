@@ -34,7 +34,7 @@ export default function HomePage() {
   return (
     <PageContainer>
       <HomeIntro />
-      <section id="projects" className="home-projects" aria-label="Projects">
+      <section id="projects" className="scroll-mt-6" aria-label="Projects">
         <ProjectFilter projects={projects} categoryLabels={projectCategoryLabels} />
       </section>
       <ConsultationCTA email="gatjensb@gmail.com" />
