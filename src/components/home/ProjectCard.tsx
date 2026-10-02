@@ -1,9 +1,9 @@
 import Image from "next/image";
+import Link from "next/link";
 import type { Project } from "@/content/projects";
 
 export function ProjectCard({ project }: { project: Project }) {
-  return (
-    <li className="project-card">
+  const artwork = (
       <Image
         src={project.coverImage}
         alt={project.coverImageAlt}
@@ -12,6 +12,15 @@ export function ProjectCard({ project }: { project: Project }) {
         sizes="(min-width: 1120px) 346.67px, (min-width: 1024px) 31.25vw, (min-width: 768px) 46.875vw, (min-width: 512px) 93.75vw, calc(100vw - 32px)"
         className="block h-auto w-full"
       />
+  );
+
+  return (
+    <li className="project-card">
+      {project.slug === "ui-props" ? (
+        <Link href="/projects/ui-props" aria-label="View UI & Props project" className="block">
+          {artwork}
+        </Link>
+      ) : artwork}
     </li>
   );
 }
