@@ -16,7 +16,7 @@ export function ConsultationCTA({ email }: { email?: string }) {
         <div className="relative z-10 mx-auto w-full max-w-consultation border-2 border-foreground bg-surface p-consultation-padding text-left">
           <span className="font-heading text-4xl font-bold" aria-hidden="true">&lt;&gt;</span>
           <h3 className="mt-5 mb-8 font-sans text-xl font-semibold">Let&apos;s talk</h3>
-          <p className="flex items-start gap-2 text-consultation-body font-semibold"><InfoIcon className="mt-0.5 size-4 shrink-0" /><span>Book me and I will never give up. Cal will never let you down. Open Source will never run around and desert you.</span></p>
+          <p className="flex items-start gap-2 text-consultation-body font-semibold"><InfoIcon className="mt-0.5 size-4 shrink-0" /><span>Book a Call.</span></p>
           <ul className="mt-6 space-y-5 text-consultation-body font-semibold">
             <li className="flex items-start gap-2"><ClockIcon className="mt-0.5 size-4 shrink-0" /><span>30 min</span></li>
             <li className="flex items-start gap-2"><LocationIcon className="mt-0.5 size-4 shrink-0" /><span>Zoom</span></li>
