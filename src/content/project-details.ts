@@ -40,6 +40,7 @@ export type ProjectDetailData = {
 
 // Introduction and external URLs remain omitted pending approved copy.
 export const projectDetails: readonly ProjectDetailData[] = [
+  { slug: "zonda-live", title: "Zonda Live", sections: [] },
   { slug: "move-on", title: "MoveOn", sections: [] },
   { slug: "envision", title: "Envision", sections: [] },
   {
