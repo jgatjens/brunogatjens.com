@@ -40,6 +40,7 @@ export type ProjectDetailData = {
 
 // Introduction and external URLs remain omitted pending approved copy.
 export const projectDetails: readonly ProjectDetailData[] = [
+  { slug: "envision", title: "Envision", sections: [] },
   {
     slug: "synapse",
     title: "Synapse",

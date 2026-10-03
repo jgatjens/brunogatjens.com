@@ -44,6 +44,7 @@ export const projects: readonly Project[] = [
   },
   {
     slug: "envision",
+    detailHref: "/projects/envision",
     title: "Envision",
     categories: ["case-study"],
     coverImage: "/images/projects/envision-tile.png",

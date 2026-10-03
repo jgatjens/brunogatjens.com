@@ -8,8 +8,10 @@ import { SynapseRoleTools } from "./SynapseRoleTools";
 import { SynapseResearchInsights } from "./SynapseResearchInsights";
 import { SynapseChallengesLearnings } from "./SynapseChallengesLearnings";
 import { SynapseMetricsImpact } from "./SynapseMetricsImpact";
+import { EnvisionDetail } from "./EnvisionDetail";
 
 export function ProjectDetail({ project }: { project: ProjectDetailData }) {
+  if (project.slug === "envision") return <EnvisionDetail />;
   if (project.gallery) {
     return (
       <PageContainer className="pt-10 pb-12 sm:pt-16 sm:pb-20 lg:pt-20 lg:pb-32">

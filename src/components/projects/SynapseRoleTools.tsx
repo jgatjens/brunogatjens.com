@@ -9,7 +9,7 @@ export function SynapseRoleTools() {
       <h2 id="synapse-role-tools" className="border-l border-muted pl-6 text-xl font-semibold sm:text-2xl lg:pl-10 lg:text-4xl lg:leading-tight">Role &amp; Tools</h2>
       <div className="mt-8 grid items-center gap-8 sm:mt-12 md:grid-cols-[minmax(0,300px)_minmax(0,1fr)] md:gap-16 lg:gap-32">
         <Image src="/images/projects/synapse/synapse-section-03.svg" alt="" width={300} height={300}
-          className="mx-auto h-auto w-full max-w-60 md:max-w-[300px]" />
+          className="mx-auto h-auto w-full max-w-60 md:max-w-75" />
         <div className="min-w-0 space-y-8 sm:space-y-10">
           {[{ id: "synapse-roles", title: "ROLE:", items: roles }, { id: "synapse-tools", title: "TOOLS:", items: tools }].map((group) => (
             <div key={group.id}>
