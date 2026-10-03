@@ -2,6 +2,12 @@ import type { ProjectDetailData } from "@/content/project-details";
 import { PageContainer } from "@/components/layout/PageContainer";
 import { ProjectSection } from "./ProjectSection";
 import { ProjectArtwork } from "./ProjectArtwork";
+import { ProjectCaseStudyHeader } from "./ProjectCaseStudyHeader";
+import { SynapseProblemSolution } from "./SynapseProblemSolution";
+import { SynapseRoleTools } from "./SynapseRoleTools";
+import { SynapseResearchInsights } from "./SynapseResearchInsights";
+import { SynapseChallengesLearnings } from "./SynapseChallengesLearnings";
+import { SynapseMetricsImpact } from "./SynapseMetricsImpact";
 
 export function ProjectDetail({ project }: { project: ProjectDetailData }) {
   if (project.gallery) {
@@ -29,11 +35,39 @@ export function ProjectDetail({ project }: { project: ProjectDetailData }) {
   }
   return (
     <PageContainer className="py-section lg:pt-20">
-      <h1 className="text-4xl font-bold sm:text-5xl">{project.title}</h1>
-      {project.introduction && <p className="mt-6 leading-relaxed">{project.introduction}</p>}
-      <div className="mt-section space-y-section">
+      {project.caseStudyHeader ? <ProjectCaseStudyHeader project={project} /> : (
+        <>
+          <h1 className="text-4xl font-bold sm:text-5xl">{project.title}</h1>
+          {project.introduction && <p className="mt-6 leading-relaxed">{project.introduction}</p>}
+        </>
+      )}
+      {project.sections.length > 0 && <div className="mt-section space-y-section">
         {project.sections.map((section) => <ProjectSection key={section.id} section={section} />)}
-      </div>
+      </div>}
+      {project.slug === "synapse" && <SynapseProblemSolution />}
+      {project.slug === "synapse" && <SynapseRoleTools />}
+      {project.slug === "synapse" && <SynapseResearchInsights />}
+      {project.slug === "synapse" && <SynapseChallengesLearnings />}
+      {project.slug === "synapse" && <SynapseMetricsImpact />}
+      {project.slug === "synapse" && (
+        <div className="mt-section">
+          <ProjectSection section={{
+            id: "synapse-tablet-screens",
+            title: "Tablet screens",
+            groups: [{
+              id: "synapse-tablet-screen",
+              layout: "full",
+              images: [{
+                id: "synapse-section-07",
+                src: "/images/projects/synapse/synapse-section-07.png",
+                alt: "Synapse tablet interface",
+                width: 1536,
+                height: 2048,
+              }],
+            }],
+          }} />
+        </div>
+      )}
     </PageContainer>
   );
 }

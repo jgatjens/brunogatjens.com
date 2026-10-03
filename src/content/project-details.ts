@@ -7,7 +7,7 @@ export type ProjectArtworkData = {
   link?: { href: string; label: string; newTab?: boolean };
 };
 
-export type ProjectImageLayout = "full" | "columns-3" | "columns-4" | "columns-6";
+export type ProjectImageLayout = "full" | "columns-2" | "columns-3" | "columns-4" | "columns-6";
 
 export type ProjectImageGroupData = {
   id: string;
@@ -28,6 +28,11 @@ export type ProjectDetailData = {
   slug: string;
   title: string;
   introduction?: string;
+  caseStudyHeader?: {
+    logo: ProjectArtworkData;
+    illustration: ProjectArtworkData;
+    website: string;
+  };
   theme?: "dark";
   gallery?: readonly ProjectArtworkData[];
   sections: readonly ProjectSectionData[];
@@ -35,6 +40,32 @@ export type ProjectDetailData = {
 
 // Introduction and external URLs remain omitted pending approved copy.
 export const projectDetails: readonly ProjectDetailData[] = [
+  {
+    slug: "synapse",
+    title: "Synapse",
+    introduction: "Efficient management of personnel, assets, and field information",
+    caseStudyHeader: {
+      logo: { id: "synapse-logo", src: "/images/projects/synapse/logo-synapse.svg", alt: "", width: 80, height: 80 },
+      illustration: { id: "synapse-header", src: "/images/projects/synapse/header-synapse.svg", alt: "Illustration of a person using a connected device", width: 349, height: 333 },
+      website: "https://www.syn4pse.com/",
+    },
+    sections: [
+      {
+        id: "synapse-mobile-screen",
+        title: "Mobile screen",
+        groups: [
+          {
+            id: "synapse-mobile-screens",
+            layout: "columns-2",
+            images: [
+              { id: "synapse-section-01-item-01", src: "/images/projects/synapse/synapse-section-01-item-01.png", alt: "Synapse Statistics screen with performance charts and completed orders", width: 780, height: 1572 },
+              { id: "synapse-section-01-item-02", src: "/images/projects/synapse/synapse-section-01-item-02.png", alt: "Synapse Reporting screen with crossing details, photos, and cable measurements", width: 780, height: 1572 },
+            ],
+          },
+        ],
+      },
+    ],
+  },
   {
     slug: "luminus",
     title: "The World of Luminus",

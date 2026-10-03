@@ -2,6 +2,10 @@ import type { ProjectImageGroupData, ProjectImageLayout } from "@/content/projec
 import { ProjectArtwork } from "./ProjectArtwork";
 
 const layouts: Record<ProjectImageLayout, { className: string; sizes: string }> = {
+  "columns-2": {
+    className: "grid-cols-1 md:grid-cols-2",
+    sizes: "(min-width: 1120px) 508px, (min-width: 768px) 46vw, (min-width: 512px) 93.75vw, calc(100vw - 32px)",
+  },
   full: {
     className: "grid-cols-1",
     sizes: "(min-width: 1120px) 1040px, (min-width: 512px) 93.75vw, calc(100vw - 32px)",
