@@ -9,8 +9,10 @@ import { SynapseResearchInsights } from "./SynapseResearchInsights";
 import { SynapseChallengesLearnings } from "./SynapseChallengesLearnings";
 import { SynapseMetricsImpact } from "./SynapseMetricsImpact";
 import { EnvisionDetail } from "./EnvisionDetail";
+import { MoveOnDetail } from "./MoveOnDetail";
 
 export function ProjectDetail({ project }: { project: ProjectDetailData }) {
+  if (project.slug === "move-on") return <MoveOnDetail />;
   if (project.slug === "envision") return <EnvisionDetail />;
   if (project.gallery) {
     return (

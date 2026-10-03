@@ -35,6 +35,7 @@ export const projects: readonly Project[] = [
   },
   {
     slug: "move-on",
+    detailHref: "/projects/move-on",
     title: "Move On",
     categories: ["case-study"],
     coverImage: "/images/projects/move-on-tile.png",
