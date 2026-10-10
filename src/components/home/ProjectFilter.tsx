@@ -24,7 +24,7 @@ export function ProjectFilter({ projects, categoryLabels }: ProjectFilterProps) 
   return (
     <>
       <div className="mb-filter-grid" role="group" aria-label="Filter projects">
-        <ul className="flex flex-wrap gap-2.5">
+        <ul className="flex flex-wrap justify-center gap-2.5">
           {options.map(({ value, label }) => (
             <li key={value}>
               <button
