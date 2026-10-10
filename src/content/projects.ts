@@ -3,6 +3,7 @@ export type ProjectCategory = "case-study" | "brand" | "ui-props";
 export type Project = {
   slug: string;
   title: string;
+  cardLabel: string;
   categories: ProjectCategory[];
   coverImage: string;
   coverImageAlt: string;
@@ -28,6 +29,7 @@ export const projects: readonly Project[] = [
     slug: "zonda-live",
     detailHref: "/projects/zonda-live",
     title: "Zonda Live",
+    cardLabel: "Zonda Live",
     categories: ["case-study"],
     coverImage: "/images/projects/tiles/zonda-live-tile.png",
     coverImageAlt: "Zonda Live project artwork",
@@ -38,6 +40,7 @@ export const projects: readonly Project[] = [
     slug: "move-on",
     detailHref: "/projects/move-on",
     title: "Move On",
+    cardLabel: "MoveOn",
     categories: ["case-study"],
     coverImage: "/images/projects/tiles/move-on-tile.png",
     coverImageAlt: "Move On project artwork",
@@ -48,6 +51,7 @@ export const projects: readonly Project[] = [
     slug: "envision",
     detailHref: "/projects/envision",
     title: "Envision",
+    cardLabel: "Envision",
     categories: ["case-study"],
     coverImage: "/images/projects/tiles/envision-tile.png",
     coverImageAlt: "Envision project artwork",
@@ -58,6 +62,7 @@ export const projects: readonly Project[] = [
     slug: "synapse",
     detailHref: "/projects/synapse",
     title: "Synapse",
+    cardLabel: "Synapse",
     categories: ["case-study"],
     coverImage: "/images/projects/tiles/synapse-tile.png",
     coverImageAlt: "Synapse project artwork",
@@ -68,6 +73,7 @@ export const projects: readonly Project[] = [
     slug: "luminus",
     detailHref: "/projects/luminus",
     title: "Luminus",
+    cardLabel: "Luminus Brand",
     categories: ["brand"],
     coverImage: "/images/projects/tiles/luminus-tile.png",
     coverImageAlt: "Luminus project artwork",
@@ -78,6 +84,7 @@ export const projects: readonly Project[] = [
     slug: "ui-props",
     detailHref: "/projects/ui-props",
     title: "UI / Props",
+    cardLabel: "UI & Props",
     categories: ["ui-props"],
     coverImage: "/images/projects/tiles/ui-props-tile.png",
     coverImageAlt: "UI / Props project artwork",
