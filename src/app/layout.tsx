@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
-import { Bricolage_Grotesque, Fira_Code } from "next/font/google";
+import { Bricolage_Grotesque, Fira_Code, Noto_Serif } from "next/font/google";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import "./globals.css";
 
 const bricolage = Bricolage_Grotesque({ subsets: ["latin"], variable: "--font-bricolage", display: "swap" });
 const firaCode = Fira_Code({ subsets: ["latin"], variable: "--font-fira-code", display: "swap" });
+const notoSerif = Noto_Serif({ subsets: ["latin"], weight: "700", variable: "--font-noto-serif", display: "swap" });
 
 export const metadata: Metadata = {
   title: { default: "Bruno Gätjens — UX/UI Designer / Illustrator", template: "%s | Bruno Gätjens" },
@@ -18,7 +19,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${bricolage.variable} ${firaCode.variable}`}>
+    <html lang="en" className={`${bricolage.variable} ${firaCode.variable} ${notoSerif.variable}`}>
       <body className="flex min-h-dvh flex-col">
         <a href="#main-content" className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:bg-background focus:p-4">Skip to content</a>
         <Header />
