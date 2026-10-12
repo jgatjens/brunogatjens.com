@@ -10,7 +10,7 @@ const socialLinks = [
 export function SocialLinks() {
   return (
     <nav aria-label="Social links" className="mt-12 min-w-0">
-      <ul className="flex flex-wrap gap-x-6 gap-y-2">
+      <ul className="flex flex-wrap justify-center gap-x-6 gap-y-2 lg:justify-start">
         {socialLinks.map(({ icon: Icon, label, href }) => (
           <li key={href}>
             <a href={href} target="_blank" className="inline-flex min-h-11 items-center gap-3 underline decoration-1 underline-offset-2">
