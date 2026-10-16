@@ -13,7 +13,7 @@ const glass = {
 export function ProjectCard({ project }: { project: Project }) {
   const filterId = `${project.slug}-label-glass`;
   const splayFrequency = 0.01 * (glass.splay / 100);
-  const channelOffset = glass.dispersion / 8;
+  const channelOffset = glass.dispersion / 56;
   const artwork = (
     <Image
       src={project.coverImage}
@@ -50,13 +50,13 @@ export function ProjectCard({ project }: { project: Project }) {
               </filter>
             </defs>
           </svg>
-          <span className="absolute bottom-[11.67px] left-1/2 z-[1] w-fit max-w-[calc(100%-2rem)] -translate-x-1/2 overflow-hidden rounded-full px-6 py-4 font-sans text-[20px] font-semibold leading-[26px] text-[#22212C]">
+          <span className="absolute bottom-3 left-1/2 z-[1] flex w-fit max-w-[calc(100%-2rem)] -translate-x-1/2 flex-col items-start gap-2 overflow-hidden rounded-full px-6 py-3 font-sans text-[20px] font-semibold leading-[26px] text-[#22212C]">
             <span
               aria-hidden="true"
               className="pointer-events-none absolute overflow-hidden rounded-full"
               style={{
                 left: "calc(50% - 50cqi)",
-                top: "calc(100% - 100cqi + 11.67px)",
+                top: "calc(100% - 100cqi + 12px)",
                 width: "100cqi",
                 height: "100cqi",
               }}
