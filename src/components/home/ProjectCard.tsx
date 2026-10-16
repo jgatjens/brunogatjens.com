@@ -6,29 +6,33 @@ const glass = {
   refraction: 56,
   depth: 72,
   dispersion: 56,
-  frost: 8,
+  frost: 12,
   splay: 100,
 };
 
 export function ProjectCard({ project }: { project: Project }) {
-  const filterId = `${project.slug}-refraction`;
+  const filterId = `${project.slug}-label-glass`;
   const splayFrequency = 0.01 * (glass.splay / 100);
   const channelOffset = glass.dispersion / 8;
   const artwork = (
-      <Image
-        src={project.coverImage}
-        alt={project.coverImageAlt}
-        width={project.coverImageWidth}
-        height={project.coverImageHeight}
-        sizes="(min-width: 1120px) 346.67px, (min-width: 1024px) 31.25vw, (min-width: 768px) 46.875vw, (min-width: 512px) 93.75vw, calc(100vw - 32px)"
-        className="block h-auto w-full"
-      />
+    <Image
+      src={project.coverImage}
+      alt={project.coverImageAlt}
+      width={project.coverImageWidth}
+      height={project.coverImageHeight}
+      sizes="(min-width: 1120px) 346.67px, (min-width: 1024px) 31.25vw, (min-width: 768px) 46.875vw, (min-width: 512px) 93.75vw, calc(100vw - 32px)"
+      className="block h-auto w-full"
+    />
   );
 
   return (
     <li className="min-w-0">
       {project.detailHref ? (
-        <Link href={project.detailHref} aria-label={`View ${project.cardLabel} project`} className="group relative block overflow-hidden focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-focus">
+        <Link
+          href={project.detailHref}
+          aria-label={`View ${project.cardLabel} project`}
+          className="relative @container block overflow-hidden focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-focus"
+        >
           {artwork}
           <svg aria-hidden="true" className="absolute h-0 w-0" focusable="false">
             <defs>
@@ -46,19 +50,28 @@ export function ProjectCard({ project }: { project: Project }) {
               </filter>
             </defs>
           </svg>
-          <span aria-hidden="true" className="pointer-events-none absolute inset-0 bg-white/40 opacity-0 transition-opacity group-hover:opacity-100 group-focus-visible:opacity-100" />
-          <span aria-hidden="true" className="pointer-events-none absolute inset-0 z-[1] overflow-hidden [clip-path:inset(calc(100%_-_58px)_0_0)] opacity-0 transition-opacity group-hover:opacity-100 group-focus-visible:opacity-100">
-            <Image
-              src={project.coverImage}
-              alt=""
-              fill
-              sizes="(min-width: 1120px) 346.67px, (min-width: 1024px) 31.25vw, (min-width: 768px) 46.875vw, (min-width: 512px) 93.75vw, calc(100vw - 32px)"
-              className="object-cover"
-              style={{ filter: `url(#${filterId})` }}
-            />
-          </span>
-          <span className="absolute bottom-[11.67px] left-1/2 z-[2] flex w-fit max-w-[calc(100%-2rem)] -translate-x-1/2 flex-col items-start gap-2 rounded-full bg-white/40 px-6 py-4 font-sans text-[20px] font-semibold leading-[26px] text-[#22212C] backdrop-blur-[8px]">
-            {project.cardLabel}
+          <span className="absolute bottom-[11.67px] left-1/2 z-[1] w-fit max-w-[calc(100%-2rem)] -translate-x-1/2 overflow-hidden rounded-full px-6 py-4 font-sans text-[20px] font-semibold leading-[26px] text-[#22212C]">
+            <span
+              aria-hidden="true"
+              className="pointer-events-none absolute overflow-hidden rounded-full"
+              style={{
+                left: "calc(50% - 50cqi)",
+                top: "calc(100% - 100cqi + 11.67px)",
+                width: "100cqi",
+                height: "100cqi",
+              }}
+            >
+              <Image
+                src={project.coverImage}
+                alt=""
+                fill
+                sizes="(min-width: 1120px) 346.67px, (min-width: 1024px) 31.25vw, (min-width: 768px) 46.875vw, (min-width: 512px) 93.75vw, calc(100vw - 32px)"
+                className="object-cover"
+                style={{ filter: `url(#${filterId})` }}
+              />
+            </span>
+            <span aria-hidden="true" className="project-card-glass-surface pointer-events-none absolute inset-0 z-[1]" />
+            <span className="relative z-[2] w-auto whitespace-nowrap">{project.cardLabel}</span>
           </span>
         </Link>
       ) : artwork}
