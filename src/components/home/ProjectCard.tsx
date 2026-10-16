@@ -57,7 +57,7 @@ export function ProjectCard({ project }: { project: Project }) {
               style={{ filter: `url(#${filterId})` }}
             />
           </span>
-          <span className="absolute bottom-[-0.33px] left-0 z-[2] flex h-[58px] right-[-0.33px] flex-col items-start gap-2 bg-white/40 p-4 font-sans text-[20px] font-semibold leading-[26px] text-[#22212C] opacity-0 backdrop-blur-[8px] transition-opacity group-hover:opacity-100 group-focus-visible:opacity-100">
+          <span className="absolute bottom-[11.67px] left-1/2 z-[2] flex w-fit max-w-[calc(100%-2rem)] -translate-x-1/2 flex-col items-start gap-2 rounded-full bg-white/40 px-6 py-4 font-sans text-[20px] font-semibold leading-[26px] text-[#22212C] backdrop-blur-[8px]">
             {project.cardLabel}
           </span>
         </Link>
