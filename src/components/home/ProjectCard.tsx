@@ -20,9 +20,13 @@ export function ProjectCard({ project }: { project: Project }) {
         <Link
           href={project.detailHref}
           aria-label={`View ${project.cardLabel} project`}
-          className="relative block overflow-hidden focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-focus"
+          className="group relative block overflow-hidden focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-focus"
         >
           {artwork}
+          <span
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-0 bg-white/40 opacity-0 transition-opacity group-hover:opacity-100 group-focus-visible:opacity-100"
+          />
           <span className="absolute bottom-3 left-1/2 z-[1] flex w-fit max-w-[calc(100%-2rem)] -translate-x-1/2 flex-col items-start overflow-hidden rounded-[4px] bg-white px-5 py-3 font-sans text-[20px] font-semibold leading-normal text-[#22212C]">
             <span className="w-auto whitespace-nowrap">{project.cardLabel}</span>
           </span>
