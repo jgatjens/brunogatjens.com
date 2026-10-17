@@ -33,7 +33,7 @@
   --spacing-filter-target-desktop: 1.75rem;
   --spacing-consultation-inner: clamp(2rem, 3.125vw, 2.5rem);
   --spacing-consultation-padding: clamp(1.5rem, 1.25rem + 0.625vw, 1.75rem);
-  --spacing-footer-top: clamp(2rem, 5vw, 4rem);
+  --spacing-footer-top: clamp(3rem, 6.25vw, 5rem);
   --container-page: 70rem;
   --container-consultation: 20rem;
   --text-intro: clamp(1rem, 0.875rem + 0.46875vw, 1.25rem);
@@ -42,7 +42,6 @@
   --text-consultation--line-height: 1.2;
   --text-consultation-body: clamp(0.875rem, 0.75rem + 0.3125vw, 1rem);
   --text-consultation-body--line-height: 1.375;
-  --text-footer: 0.6875rem;
   --text-header: 1rem;
   --text-filter-desktop: 1.0625rem;
   --text-filter-desktop--line-height: 1.25;
@@ -81,5 +80,4 @@
   .tile-right-one { right: 20%; top: 4%; }
   .tile-right-two { right: 20%; top: 38%; }
   .tile-right-three { right: 6%; top: 38%; }
-  .footer-content li + li::before { @apply hidden h-3 border-l border-foreground pr-5 sm:block; content: ""; }
 }

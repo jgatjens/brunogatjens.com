@@ -2,8 +2,7 @@ import { InfoIcon, ClockIcon, LocationIcon, GlobeIcon } from "@/components/icons
 
 export function ConsultationCTA({ email }: { email?: string }) {
   return (
-    <section className="pt-consultation-top pb-consultation-bottom text-center" aria-labelledby="consultation-title">
-      <h2 id="consultation-title" className="text-consultation font-bold">Book a Free Consultation</h2>
+    <section className="pt-consultation-top pb-consultation-bottom text-center" aria-label="Schedule a Call">
       <div className="relative mt-consultation-inner">
         <div className="pointer-events-none absolute inset-0 hidden overflow-hidden lg:block" aria-hidden="true">
           <span className="absolute flex size-28 items-center justify-center border-2 border-border bg-surface font-heading text-4xl font-bold text-muted blur-[5px] tile-left-one">12</span>
@@ -26,7 +25,7 @@ export function ConsultationCTA({ email }: { email?: string }) {
           </ul>
         </div>
       </div>
-      {email ? <a target="_blank" className="mt-consultation-inner inline-block rounded-sm bg-[#22212C] px-6 py-2 text-lg text-[#F8FAFD] transition-colors hover:bg-[#9580FF] sm:text-xl" href={`${email}`} aria-label="Email Bruno to discuss a free consultation">LET&apos;S TALK</a> : <span className="mt-consultation-inner inline-block rounded-sm bg-[#22212C] px-6 py-2 text-lg text-[#F8FAFD] sm:text-xl" aria-disabled="true">LET&apos;S TALK<span className="sr-only"> — contact link awaiting confirmation</span></span>}
+      {email ? <a target="_blank" className="mt-consultation-inner inline-block rounded-sm bg-[#22212C] px-6 py-2 text-lg text-[#F8FAFD] transition-colors hover:bg-[#9580FF] sm:text-xl" href={`${email}`} aria-label="Schedule a call with Bruno">Schedule a Call</a> : <span className="mt-consultation-inner inline-block rounded-sm bg-[#22212C] px-6 py-2 text-lg text-[#F8FAFD] sm:text-xl" aria-disabled="true">Schedule a Call<span className="sr-only"> — contact link awaiting confirmation</span></span>}
     </section>
   );
 }
