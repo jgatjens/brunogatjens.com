@@ -22,8 +22,7 @@ export const projectCategoryLabels: Record<ProjectCategory, string> = {
 
 // Array order defines the Home grid. Categories are temporary assignments
 // approved by the user, not confirmed classifications of the actual work.
-// Descriptions and years are omitted until supplied.
-// Future detail URLs derive from each slug: /projects/{slug}.
+// Descriptions and years are omitted until supplied. Detail URLs are explicit.
 export const projects: readonly Project[] = [
   {
     slug: "zonda-live",
@@ -90,5 +89,38 @@ export const projects: readonly Project[] = [
     coverImageAlt: "UI / Props project artwork",
     coverImageWidth: 694,
     coverImageHeight: 694,
+  },
+  {
+    slug: "hookbots",
+    detailHref: "/projects/hookbots",
+    title: "Hookbots",
+    cardLabel: "Hookbots",
+    categories: [],
+    coverImage: "/images/projects/tiles/hookbots-tile.png",
+    coverImageAlt: "Hookbots project artwork",
+    coverImageWidth: 404,
+    coverImageHeight: 316,
+  },
+  {
+    slug: "childrens-book",
+    detailHref: "/projects/childrens-book",
+    title: "Children's Book",
+    cardLabel: "Children's Book",
+    categories: [],
+    coverImage: "/images/projects/tiles/childrens-book-tile.png",
+    coverImageAlt: "Children's Book project artwork",
+    coverImageWidth: 3500,
+    coverImageHeight: 3500,
+  },
+  {
+    slug: "character-design",
+    detailHref: "/projects/character-design",
+    title: "Character Design",
+    cardLabel: "Character Design",
+    categories: [],
+    coverImage: "/images/projects/tiles/character-design-tile.png",
+    coverImageAlt: "Character Design project artwork",
+    coverImageWidth: 1500,
+    coverImageHeight: 1500,
   },
 ];

@@ -4,14 +4,16 @@ import type { Project } from "@/content/projects";
 
 export function ProjectCard({ project }: { project: Project }) {
   const artwork = (
-    <Image
-      src={project.coverImage}
-      alt={project.coverImageAlt}
-      width={project.coverImageWidth}
-      height={project.coverImageHeight}
-      sizes="(min-width: 1120px) 346.67px, (min-width: 1024px) 31.25vw, (min-width: 768px) 46.875vw, (min-width: 512px) 93.75vw, calc(100vw - 32px)"
-      className="block h-auto w-full"
-    />
+    <span className="relative block aspect-square w-full overflow-hidden">
+      <Image
+        src={project.coverImage}
+        alt={project.coverImageAlt}
+        width={project.coverImageWidth}
+        height={project.coverImageHeight}
+        sizes="(min-width: 1120px) 346.67px, (min-width: 1024px) 31.25vw, (min-width: 768px) 46.875vw, (min-width: 512px) 93.75vw, calc(100vw - 32px)"
+        className="absolute inset-0 h-full w-full object-cover"
+      />
+    </span>
   );
 
   return (
@@ -27,7 +29,7 @@ export function ProjectCard({ project }: { project: Project }) {
             aria-hidden="true"
             className="pointer-events-none absolute inset-0 bg-white/40 opacity-0 transition-opacity group-hover:opacity-100 group-focus-visible:opacity-100"
           />
-          <span className="absolute bottom-3 left-1/2 z-[1] flex w-fit max-w-[calc(100%-2rem)] -translate-x-1/2 flex-col items-start overflow-hidden rounded-[4px] bg-white px-5 py-3 font-sans text-[20px] font-semibold leading-normal text-[#22212C]">
+          <span className="absolute bottom-2 left-1/2 z-[1] flex w-fit max-w-[calc(100%-2rem)] -translate-x-1/2 flex-col items-start overflow-hidden rounded-[4px] bg-white/64 px-5 py-2 font-sans text-[20px] font-semibold leading-normal text-[#22212C]">
             <span className="w-auto whitespace-nowrap">{project.cardLabel}</span>
           </span>
         </Link>

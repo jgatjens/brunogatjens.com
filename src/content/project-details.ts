@@ -4,6 +4,9 @@ export type ProjectArtworkData = {
   width: number;
   height: number;
   src: string;
+  loading?: "eager" | "lazy";
+  displayFrame?: { width: number; height: number };
+  maxWidth?: number;
   link?: { href: string; label: string; newTab?: boolean };
 };
 
@@ -34,6 +37,7 @@ export type ProjectDetailData = {
     website: string;
   };
   theme?: "dark";
+  showGalleryTitle?: boolean;
   gallery?: readonly ProjectArtworkData[];
   sections: readonly ProjectSectionData[];
 };
@@ -401,5 +405,54 @@ export const projectDetails: readonly ProjectDetailData[] = [
         ]
       }
     ]
+  },
+  {
+    slug: "hookbots",
+    title: "Hookbots",
+    introduction: "Illustrated 7 main characters with expressive poses and clean linework.",
+    showGalleryTitle: true,
+    sections: [],
+    gallery: [
+      { id: "hookbots-01", src: "/images/projects/hookbots/hookbots-01.png", alt: "Hookbots character lineup", width: 1400, height: 960, loading: "eager" },
+      { id: "hookbots-02", src: "/images/projects/hookbots/hookbots-02.png", alt: "Hookbots character illustration 2", width: 1400, height: 960 },
+      { id: "hookbots-03", src: "/images/projects/hookbots/hookbots-03.png", alt: "Hookbots character illustration 3", width: 1400, height: 960 },
+      { id: "hookbots-04", src: "/images/projects/hookbots/hookbots-04.png", alt: "Hookbots character illustration 4", width: 1400, height: 960 },
+      { id: "hookbots-05", src: "/images/projects/hookbots/hookbots-05.png", alt: "Hookbots character illustration 5", width: 1400, height: 960 },
+      { id: "hookbots-06", src: "/images/projects/hookbots/hookbots-06.png", alt: "Hookbots character illustration 6", width: 1400, height: 960 },
+      { id: "hookbots-07", src: "/images/projects/hookbots/hookbots-07.png", alt: "Hookbots character illustration 7", width: 1400, height: 960 },
+      { id: "hookbots-08", src: "/images/projects/hookbots/hookbots-08.png", alt: "Hookbots character illustration 8", width: 1400, height: 960 },
+    ],
+  },
+  {
+    slug: "childrens-book",
+    title: "Children's Book",
+    showGalleryTitle: true,
+    sections: [],
+    gallery: [
+      { id: "childrens-book-01", src: "/images/projects/childrens-book/childrens-book-01.png", alt: "Children's Book illustration 1", width: 1920, height: 1920, loading: "eager" },
+      { id: "childrens-book-02", src: "/images/projects/childrens-book/childrens-book-02.png", alt: "Children's Book scene with a girl standing beside a large pink dinosaur in a forest", width: 768, height: 768 },
+      { id: "childrens-book-03", src: "/images/projects/childrens-book/childrens-book-03.png", alt: "Children's Book illustration 3", width: 4096, height: 2650, displayFrame: { width: 932, height: 673 } },
+      { id: "childrens-book-04", src: "/images/projects/childrens-book/childrens-book-04.png", alt: "Children's Book illustration 4", width: 960, height: 1440 },
+      { id: "childrens-book-05", src: "/images/projects/childrens-book/childrens-book-05.png", alt: "Children's Book illustration 5", width: 1127, height: 1329, maxWidth: 1028 },
+      { id: "childrens-book-06", src: "/images/projects/childrens-book/childrens-book-06.png", alt: "Children's Book illustration 6", width: 1920, height: 1920 },
+      { id: "childrens-book-07", src: "/images/projects/childrens-book/childrens-book-07.png", alt: "Children's Book illustration 7", width: 935, height: 1146, maxWidth: 998 },
+      { id: "childrens-book-08", src: "/images/projects/childrens-book/childrens-book-08.png", alt: "Children's Book illustration 8", width: 1011, height: 932 },
+    ],
+  },
+  {
+    slug: "character-design",
+    title: "Character Design",
+    showGalleryTitle: true,
+    sections: [],
+    gallery: [
+      { id: "character-design-01", src: "/images/projects/character-design/character-design-01.png", alt: "Character Design illustration 1", width: 1500, height: 1500, loading: "eager" },
+      { id: "character-design-02", src: "/images/projects/character-design/character-design-02.png", alt: "Character design sheet with fantasy characters and creature sketches", width: 1086, height: 768 },
+      { id: "character-design-03", src: "/images/projects/character-design/character-design-03.png", alt: "Character Design illustration 3", width: 1440, height: 1440 },
+      { id: "character-design-04", src: "/images/projects/character-design/character-design-04.png", alt: "Character Design illustration 4", width: 1440, height: 1800 },
+      { id: "character-design-05", src: "/images/projects/character-design/character-design-05.png", alt: "Character Design illustration 5", width: 1920, height: 2716 },
+      { id: "character-design-06", src: "/images/projects/character-design/character-design-06.png", alt: "Character Design illustration 6", width: 1500, height: 1500 },
+      { id: "character-design-07", src: "/images/projects/character-design/character-design-07.png", alt: "Character Design illustration 7", width: 1500, height: 1600 },
+      { id: "character-design-08", src: "/images/projects/character-design/character-design-08.png", alt: "Character Design illustration 8", width: 1500, height: 1714 },
+    ],
   }
 ];

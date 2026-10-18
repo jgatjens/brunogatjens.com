@@ -20,9 +20,20 @@ export function ProjectDetail({ project }: { project: ProjectDetailData }) {
     return (
       <PageContainer className="pt-10 pb-12 sm:pt-16 sm:pb-20 lg:pt-20 lg:pb-32">
         <article data-project-theme={project.theme} aria-labelledby="project-title">
-          <h1 id="project-title" className="sr-only">{project.title}</h1>
-          <p className="text-sm leading-tight sm:text-base">{project.introduction}</p>
-          <div className="mt-12 space-y-12 sm:mt-20 sm:space-y-20 lg:mt-24 lg:space-y-24">
+          {project.showGalleryTitle ? (
+            <header className="flex flex-col items-start gap-10 pb-8">
+              <h1 id="project-title" className="font-[family-name:var(--font-noto-serif)] text-4xl font-bold text-black sm:text-5xl">{project.title}</h1>
+              {project.introduction && <p className="w-full text-base leading-normal text-[#22212C]">{project.introduction}</p>}
+            </header>
+          ) : (
+            <>
+              <h1 id="project-title" className="sr-only">{project.title}</h1>
+              {project.introduction && <p className="text-sm leading-tight sm:text-base">{project.introduction}</p>}
+            </>
+          )}
+          <div className={project.showGalleryTitle
+            ? "mt-16 flex flex-col gap-12 sm:gap-16"
+            : "mt-12 space-y-12 sm:mt-20 sm:space-y-20 lg:mt-24 lg:space-y-24"}>
             {project.gallery.map((artwork) => (
               artwork.link ? (
                 <a key={artwork.id} href={artwork.link.href} aria-label={artwork.link.label}
