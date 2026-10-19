@@ -16,6 +16,7 @@ export function ProjectFilter({ projects, categoryLabels }: ProjectFilterProps) 
     { value: "case-study", label: categoryLabels["case-study"] },
     { value: "brand", label: categoryLabels.brand },
     { value: "ui-props", label: categoryLabels["ui-props"] },
+    { value: "2d-art", label: categoryLabels["2d-art"] },
   ];
   const visibleProjects = activeFilter === "all"
     ? projects

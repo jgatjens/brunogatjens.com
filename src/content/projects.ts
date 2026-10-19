@@ -1,4 +1,4 @@
-export type ProjectCategory = "case-study" | "brand" | "ui-props";
+export type ProjectCategory = "case-study" | "brand" | "ui-props" | "2d-art";
 
 export type Project = {
   slug: string;
@@ -18,6 +18,7 @@ export const projectCategoryLabels: Record<ProjectCategory, string> = {
   "case-study": "CASE STUDY",
   brand: "BRAND",
   "ui-props": "UI/PROPS",
+  "2d-art": "2D Art",
 };
 
 // Array order defines the Home grid. Categories are temporary assignments
@@ -95,7 +96,7 @@ export const projects: readonly Project[] = [
     detailHref: "/projects/hookbots",
     title: "Hookbots",
     cardLabel: "Hookbots",
-    categories: [],
+    categories: ["2d-art"],
     coverImage: "/images/projects/tiles/hookbots-tile.png",
     coverImageAlt: "Hookbots project artwork",
     coverImageWidth: 404,
@@ -106,7 +107,7 @@ export const projects: readonly Project[] = [
     detailHref: "/projects/childrens-book",
     title: "Children's Book",
     cardLabel: "Children's Book",
-    categories: [],
+    categories: ["2d-art"],
     coverImage: "/images/projects/tiles/childrens-book-tile.png",
     coverImageAlt: "Children's Book project artwork",
     coverImageWidth: 3500,
@@ -117,7 +118,7 @@ export const projects: readonly Project[] = [
     detailHref: "/projects/character-design",
     title: "Character Design",
     cardLabel: "Character Design",
-    categories: [],
+    categories: ["2d-art"],
     coverImage: "/images/projects/tiles/character-design-tile.png",
     coverImageAlt: "Character Design project artwork",
     coverImageWidth: 1500,
