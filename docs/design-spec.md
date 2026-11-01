@@ -111,7 +111,7 @@ On mobile, the header uses a 48px avatar and icon-only navigation with 48px roun
 
 The homepage “Let’s talk” card sits 64px below the project cards, has 16px rounded corners, inverts its foreground and outline colors with the active theme, and remains transparent with a 2px outline. The “Schedule a Call” button sits 48px below the card, is fully rounded, uses a #E73266 fill with white text in light mode and a light fill with dark text in dark mode. Its hover fill is #E73266 in both themes.
 
-A site-wide floating “Schedule a Call” link stays fixed 20px above the viewport bottom and uses the homepage Calendly URL. On the homepage it hides while the in-page “Schedule a Call” link is visible, and returns when that link leaves view. It uses a #E73266 pill with a phone icon inside a #F8FAFD rounded container.
+A site-wide floating “Schedule a Call” link stays fixed 16px above the viewport bottom and uses the homepage Calendly URL. On the homepage it hides while the in-page “Schedule a Call” link is visible, and returns when that link leaves view. It uses a #E73266 pill with a phone icon inside a #F8FAFD rounded container.
 
 The site-wide accent color, including highlighted text, accent icons, and keyboard focus indicators, is #E73266 in both themes.
 

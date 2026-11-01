@@ -38,7 +38,7 @@ export function FloatingScheduleCall() {
   if (isHomepageCallVisible) return null;
 
   return (
-    <div className="fixed bottom-[calc(20px+env(safe-area-inset-bottom))] left-1/2 z-50 w-max max-w-[calc(100vw-32px)] -translate-x-1/2 rounded-full bg-[#f8fafd] px-[10px] py-2 shadow-[0_4px_4px_rgba(0,0,0,0.12)]">
+    <div className="fixed bottom-[calc(16px+env(safe-area-inset-bottom))] left-1/2 z-50 w-max max-w-[calc(100vw-32px)] -translate-x-1/2 rounded-full bg-[#f8fafd] px-[10px] py-2 shadow-[0_4px_4px_rgba(0,0,0,0.12)]">
       <a
         href={scheduleCallUrl}
         target="_blank"
