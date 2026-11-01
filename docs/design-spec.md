@@ -107,11 +107,13 @@ Portfolio artwork should remain the visual focus
 
 ### Header and color theme
 
-On mobile, the header uses a 48px avatar and icon-only navigation with 48px rounded targets (44px below 360px), 8px gaps, and a pale-blue active pill. The desktop header uses a 32px avatar and the full “Bruno Gätjens” brand, with text navigation, a pale-blue active pill, 16px navigation gaps, and 130px side insets within a 1280px frame. A theme toggle follows the navigation at every viewport size. It shows a moon in light mode and a sun in dark mode, and saves the selected theme across visits. A saved theme applies site-wide and overrides project-specific themes. Without a saved choice, pages use their existing theme, including Luminus's dark theme.
+On mobile, the header uses a 48px avatar and icon-only navigation with 48px rounded targets (44px below 360px), 24px gaps, and a pale-blue active pill. The desktop header uses a 32px avatar and the full “Bruno Gätjens” brand, with text navigation, a pale-blue active pill, 24px gaps between links and the theme toggle, and 130px side insets within a 1280px frame. The Info route is labeled “About” in the header. A theme toggle follows the navigation at every viewport size. It shows a moon in light mode and a sun in dark mode, and saves the selected theme across visits. A saved theme applies site-wide and overrides project-specific themes. Without a saved choice, pages use their existing theme, including Luminus's dark theme.
 
-The homepage “Let’s talk” card has 16px rounded corners, inverts its foreground and outline colors with the active theme, and remains transparent with a 2px outline. The “Schedule a Call” button is fully rounded, uses a #FF383C fill with dark text in light mode and a light fill with dark text in dark mode. Its hover fill is #FF383C in both themes.
+The homepage “Let’s talk” card sits 64px below the project cards, has 16px rounded corners, inverts its foreground and outline colors with the active theme, and remains transparent with a 2px outline. The “Schedule a Call” button is fully rounded, uses a #E73266 fill with white text in light mode and a light fill with dark text in dark mode. Its hover fill is #E73266 in both themes.
 
-The site-wide accent color, including highlighted text, accent icons, and keyboard focus indicators, is #FF383C in both themes.
+A site-wide floating “Schedule a Call” link stays fixed 24px above the viewport bottom and uses the homepage Calendly URL. On the homepage it hides while the in-page “Schedule a Call” link is visible, and returns when that link leaves view. It uses a #E73266 pill with a phone icon inside a #F8FAFD rounded container.
+
+The site-wide accent color, including highlighted text, accent icons, and keyboard focus indicators, is #E73266 in both themes.
 
 Homepage project filter tags are fully rounded. The active tag uses #22212C text on a #E1EDFF background; inactive tags have a #CDCDCD stroke and transparent background.
 

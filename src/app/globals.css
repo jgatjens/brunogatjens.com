@@ -12,8 +12,8 @@
   --color-muted: #64616f;
   --color-border: #cdccd1;
   --color-divider: #ececf1;
-  --color-accent: #ff383c;
-  --color-focus: #ff383c;
+  --color-accent: #e73266;
+  --color-focus: #e73266;
   --color-surface: #ffffff;
   --spacing-page-gutter: clamp(1rem, 3.125vw, 2.5rem);
   --spacing-section: clamp(3rem, 8vw, 6rem);
@@ -54,7 +54,7 @@
     --color-foreground: #f8f9fc;
     --color-muted: #cdccd1;
     --color-divider: #64616f;
-    --color-focus: #ff383c;
+    --color-focus: #e73266;
     --color-copyright: #f8f9fc;
   }
   html[data-color-theme="dark"] body {
@@ -62,7 +62,7 @@
     --color-foreground: #f8f9fc;
     --color-muted: #cdccd1;
     --color-divider: #64616f;
-    --color-focus: #ff383c;
+    --color-focus: #e73266;
     --color-copyright: #f8f9fc;
   }
   html[data-color-theme="light"] body {
@@ -70,7 +70,7 @@
     --color-foreground: #24232d;
     --color-muted: #64616f;
     --color-divider: #ececf1;
-    --color-focus: #ff383c;
+    --color-focus: #e73266;
     --color-copyright: #22212c;
   }
   body { @apply bg-background font-sans text-foreground antialiased; }
@@ -101,15 +101,15 @@
     background-color: #e1edff;
   }
   .consultation-cta-button {
-    background-color: #ff383c;
-    color: #22212c;
+    background-color: #e73266;
+    color: #f8f9fc;
   }
   html[data-color-theme="dark"] .consultation-cta-button {
     background-color: #f8f9fc;
     color: #22212c;
   }
   .consultation-cta-button:hover {
-    background-color: #ff383c;
+    background-color: #e73266;
     color: #f8f9fc;
   }
   .glass-style {

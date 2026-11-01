@@ -49,10 +49,10 @@ export function MainNavigation() {
   };
 
   return (
-    <nav aria-label="Main navigation" className="ml-auto flex shrink-0 flex-nowrap items-center gap-x-2 text-base font-normal lg:gap-x-4">
+    <nav aria-label="Main navigation" className="ml-auto flex shrink-0 flex-nowrap items-center gap-x-6 text-base font-normal">
       {[
         { href: "/", label: "Home", Icon: UilEstate },
-        { href: "/info", label: "Info", Icon: UilUserSquare },
+        { href: "/info", label: "About", Icon: UilUserSquare },
       ].map(({ href, label, Icon }) => {
         const isActive = pathname === href;
 

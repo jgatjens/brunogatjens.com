@@ -3,6 +3,7 @@ import { Bricolage_Grotesque, Fira_Code, Noto_Serif } from "next/font/google";
 import Script from "next/script";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { FloatingScheduleCall } from "@/components/layout/FloatingScheduleCall";
 import "./globals.css";
 
 const bricolage = Bricolage_Grotesque({ subsets: ["latin"], variable: "--font-bricolage", display: "swap" });
@@ -21,7 +22,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className={`${bricolage.variable} ${firaCode.variable} ${notoSerif.variable}`} suppressHydrationWarning>
-      <body className="flex min-h-dvh flex-col">
+      <body className="flex min-h-dvh flex-col pb-28">
         <Script id="color-theme-preference" strategy="beforeInteractive">
           {`try {
             const theme = localStorage.getItem("bruno-portfolio-color-theme");
@@ -36,6 +37,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <Header />
         <main id="main-content" tabIndex={-1} className="flex-1">{children}</main>
         <Footer />
+        <FloatingScheduleCall />
       </body>
     </html>
   );

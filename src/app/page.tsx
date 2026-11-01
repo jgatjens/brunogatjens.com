@@ -4,6 +4,7 @@ import { PageContainer } from "@/components/layout/PageContainer";
 import { HomeIntro } from "@/components/home/HomeIntro";
 import { ProjectFilter } from "@/components/home/ProjectFilter";
 import { ConsultationCTA } from "@/components/home/ConsultationCTA";
+import { scheduleCallUrl } from "@/content/links";
 
 const title = "Bruno Gätjens — UX/UI Designer / Illustrator";
 const description = "Portfolio of Bruno Gätjens, UX/UI Designer and Illustrator.";
@@ -37,7 +38,7 @@ export default function HomePage() {
       <section id="projects" className="scroll-mt-6" aria-label="Projects">
         <ProjectFilter projects={projects} categoryLabels={projectCategoryLabels} />
       </section>
-      <ConsultationCTA email="https://calendly.com/gatjensb/30min" />
+      <ConsultationCTA email={scheduleCallUrl} />
     </PageContainer>
   );
 }
