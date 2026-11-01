@@ -11,13 +11,13 @@ export function SynapseProblemSolution() {
           <p className="mt-8 text-sm leading-relaxed text-muted sm:mt-12 sm:text-base">Fragmented transport data with no visibility causes rework. How might we create a single source of truth for installations?</p>
         </div>
         <Image src="/images/projects/synapse/synapse-section-02-item-01.svg" alt="" width={69} height={272}
-          className="mx-auto hidden h-auto w-[69px] md:block" />
+          className="project-section-illustration-white project-section-illustration-dark-surrounding mx-auto hidden h-auto w-[69px] md:block" />
         <div>
           <h2 className="border-l border-muted pl-6 text-xl font-semibold sm:text-2xl lg:pl-10 lg:text-4xl lg:leading-tight">Solution</h2>
           <p className="mt-8 text-sm leading-relaxed text-muted sm:mt-12 sm:text-base">Installation Management Platform with guided forms, GPS photo validation, real-time tracking, and supervisor dashboard.</p>
         </div>
       </div>
-      <div className="mt-8 sm:mt-12">
+      <div className="project-timeline mt-8 sm:mt-12">
         <h3 id="synapse-timeline" className="font-sans text-sm font-normal text-muted sm:text-base">TIMELINE: 8 Months</h3>
         <ol aria-labelledby="synapse-timeline" className="mt-6 grid gap-6 md:grid-cols-[repeat(12,minmax(0,1fr))] md:gap-x-6 md:gap-y-4">
           {stages.map((stage, index) => (

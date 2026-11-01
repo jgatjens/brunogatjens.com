@@ -25,12 +25,12 @@ function Illustration({ name }: { name: "research" | "learnings" | "constraints"
       <path d="M0 120 H87 M35 67 L87 120 L35 173 M240 120 H153 M205 67 L153 120 L205 173" />
     </svg>
   );
-  return <Image src={`/images/projects/synapse/synapse-section-${name === "research" ? "04" : "05"}.svg`} alt="" width={240} height={240} className="mx-auto h-auto w-full max-w-60" />;
+  return <Image src={`/images/projects/synapse/synapse-section-${name === "research" ? "04" : "05"}.svg`} alt="" width={240} height={240} className="project-section-illustration-white mx-auto h-auto w-full max-w-60" />;
 }
 
 export function EnvisionDetail() {
   return (
-    <PageContainer className="py-section lg:pt-20">
+    <PageContainer className="project-page-content py-section lg:pt-20">
       <article aria-labelledby="envision-title">
         <header className="grid items-center gap-10 border-b border-border md:grid-cols-[minmax(0,405fr)_minmax(0,587fr)] md:gap-12">
           <div className="pb-8">
@@ -46,18 +46,20 @@ export function EnvisionDetail() {
           <section aria-label="Problem, solution, and project timeline">
             <div className="grid gap-8 md:grid-cols-[minmax(0,1fr)_69px_minmax(0,1fr)]">
               <div><h2 className={heading}>Problem</h2><p className={`mt-8 sm:mt-12 ${text}`}>Despite strong 3D capabilities, the app had overloaded UI, complex menus, steep learning curve and high cognitive load, overwhelming users and causing low completion + abandoned designs.</p></div>
-              <Image src="/images/projects/synapse/synapse-section-02-item-01.svg" alt="" width={69} height={272} className="mx-auto hidden h-auto w-[69px] md:block" />
+              <Image src="/images/projects/synapse/synapse-section-02-item-01.svg" alt="" width={69} height={272} className="project-section-illustration-white project-section-illustration-dark-surrounding mx-auto hidden h-auto w-[69px] md:block" />
               <div><h2 className={heading}>Solution</h2><p className={`mt-8 sm:mt-12 ${text}`}>Canvas-centered UI with contextual panels, guided product-driven customization, cost awareness, progressive disclosure, and real visuals for confident editing.</p></div>
             </div>
-            <h3 id="envision-timeline" className={`mt-8 font-sans font-normal sm:mt-12 ${text}`}>TIMELINE: 8 Months</h3>
-            <ol aria-labelledby="envision-timeline" className="mt-6 flex flex-col gap-6 lg:flex-row lg:gap-2">
-              {stages.map((stage, index) => <li key={stage} className="relative flex items-center gap-4 border-l border-border pl-6 lg:flex-1 lg:flex-col lg:gap-3 lg:border-b lg:border-l-0 lg:px-0 lg:pb-6"><span className="rounded-full border border-border px-2 py-1 text-xs text-muted">{stage}</span><span className="text-sm text-muted">{index + 1}</span><span aria-hidden="true" className="absolute -left-1.5 top-1/2 size-3 -translate-y-1/2 rounded-full border-2 border-foreground bg-background lg:left-1/2 lg:top-auto lg:-bottom-1.5 lg:-translate-x-1/2 lg:translate-y-0" /></li>)}
-            </ol>
+            <div className="project-timeline">
+              <h3 id="envision-timeline" className={`mt-8 font-sans font-normal sm:mt-12 ${text}`}>TIMELINE: 8 Months</h3>
+              <ol aria-labelledby="envision-timeline" className="mt-6 flex flex-col gap-6 lg:flex-row lg:gap-2">
+                {stages.map((stage, index) => <li key={stage} className="relative flex items-center gap-4 border-l border-border pl-6 lg:flex-1 lg:flex-col lg:gap-3 lg:border-b lg:border-l-0 lg:px-0 lg:pb-6"><span className="rounded-full border border-border px-2 py-1 text-xs text-muted">{stage}</span><span className="text-sm text-muted">{index + 1}</span><span aria-hidden="true" className="absolute -left-1.5 top-1/2 size-3 -translate-y-1/2 rounded-full border-2 border-foreground bg-background lg:left-1/2 lg:top-auto lg:-bottom-1.5 lg:-translate-x-1/2 lg:translate-y-0" /></li>)}
+              </ol>
+            </div>
           </section>
           <Section title="Role & Tools">
             <div className="grid items-center gap-8 md:grid-cols-[300px_minmax(0,1fr)] md:gap-16 lg:gap-32">
-              <Image src="/images/projects/synapse/synapse-section-03.svg" alt="" width={300} height={300} className="mx-auto h-auto w-full max-w-60 md:max-w-75" />
-              <div className="min-w-0 space-y-8 sm:space-y-10">{[{title:"ROLE:",items:roles},{title:"TOOLS:",items:tools}].map(group => <div key={group.title}><h3 className={`font-sans font-normal ${text}`}>{group.title}</h3><ul aria-label={group.title} className="mt-6 flex flex-wrap gap-3 sm:mt-8 sm:gap-4">{group.items.map(item => <li key={item} className="max-w-full rounded-lg border border-border bg-[#f1f1f1] px-3 py-2 text-sm text-muted sm:text-base">{item}</li>)}</ul></div>)}</div>
+              <Image src="/images/projects/synapse/synapse-section-03.svg" alt="" width={300} height={300} className="project-section-illustration-white mx-auto h-auto w-full max-w-60 md:max-w-75" />
+              <div className="min-w-0 space-y-8 sm:space-y-10">{[{title:"ROLE:",items:roles},{title:"TOOLS:",items:tools}].map(group => <div key={group.title}><h3 className={`font-sans font-normal ${text}`}>{group.title}</h3><ul aria-label={group.title} className="mt-6 flex flex-wrap gap-3 sm:mt-8 sm:gap-4">{group.items.map(item => <li key={item} className="max-w-full rounded-lg border border-border px-3 py-2 text-sm text-muted sm:text-base">{item}</li>)}</ul></div>)}</div>
             </div>
           </Section>
           <Section title="Research & Insights"><div className="grid items-center gap-8 md:grid-cols-[minmax(0,1fr)_240px] md:gap-16 lg:gap-32"><p className={text}>Hierarchy first, scannable design, UI consistency &amp; decision-focused</p><Illustration name="research" /></div></Section>

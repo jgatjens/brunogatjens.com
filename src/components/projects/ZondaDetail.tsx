@@ -20,8 +20,8 @@ function ExampleSection({ title, children }: { title: string; children: ReactNod
   return (
     <section aria-labelledby={id}>
       <div className="pb-16 pt-6">
-        <div className="flex items-center border-l-2 border-[#22212c] px-4 sm:px-10">
-          <h2 id={id} className="text-[clamp(1.75rem,4vw,2.5rem)] font-semibold leading-normal text-[#22212c]">{title}</h2>
+        <div className="flex items-center border-l-2 border-foreground px-4 sm:px-10">
+          <h2 id={id} className="text-[clamp(1.75rem,4vw,2.5rem)] font-semibold leading-normal text-foreground">{title}</h2>
         </div>
       </div>
       {children}
@@ -41,12 +41,12 @@ function Illustration({ name }: { name: "research" | "learnings" | "constraints"
       <path d="M0 120 H87 M35 67 L87 120 L35 173 M240 120 H153 M205 67 L153 120 L205 173" />
     </svg>
   );
-  return <Image src={`/images/projects/synapse/synapse-section-${name === "research" ? "04" : "05"}.svg`} alt="" width={240} height={240} className="mx-auto h-auto w-full max-w-60" />;
+  return <Image src={`/images/projects/synapse/synapse-section-${name === "research" ? "04" : "05"}.svg`} alt="" width={240} height={240} className="project-section-illustration-white mx-auto h-auto w-full max-w-60" />;
 }
 
 export function ZondaDetail() {
   return (
-    <PageContainer className="py-section lg:pt-20">
+    <PageContainer className="project-page-content py-section lg:pt-20">
       <article aria-labelledby="zonda-title">
         <header className="grid items-center gap-10 border-b border-border md:grid-cols-[minmax(0,682fr)_minmax(0,310fr)] md:gap-12">
           <div className="pb-8">
@@ -61,30 +61,29 @@ export function ZondaDetail() {
           <section aria-label="Problem, solution, and project timeline">
             <div className="grid gap-8 md:grid-cols-[minmax(0,1fr)_69px_minmax(0,1fr)]">
               <div><h2 className={heading}>Problem</h2><p className={`mt-8 sm:mt-12 ${text}`}>Overwhelming dense dashboards, poor hierarchy, inconsistent UI, steep learning curve.</p></div>
-              <Image src="/images/projects/synapse/synapse-section-02-item-01.svg" alt="" width={69} height={272} className="mx-auto hidden h-auto w-[69px] md:block" />
+              <Image src="/images/projects/synapse/synapse-section-02-item-01.svg" alt="" width={69} height={272} className="project-section-illustration-white project-section-illustration-dark-surrounding mx-auto hidden h-auto w-[69px] md:block" />
               <div><h2 className={heading}>Solution</h2><p className={`mt-8 sm:mt-12 ${text}`}>Dashboard redesign, improved visuals, lead UI, filters & reporting tools</p></div>
             </div>
-            <div className="mt-8 sm:mt-12">
-              <h3 id="zonda-timeline" className="flex items-center gap-4 font-sans font-normal text-[#425466]">
-                <span className="text-lg uppercase">Timeline:</span>
-                <span className="text-base">1 Year</span>
+            <div className="project-timeline mt-8 sm:mt-12">
+              <h3 id="zonda-timeline" className="flex items-center gap-4 font-sans text-sm font-normal text-[#425466] sm:text-base">
+                <span className="uppercase">Timeline:</span>
+                <span>1 Year</span>
               </h3>
-              <ol aria-labelledby="zonda-timeline" className="relative mt-6 flex flex-col gap-4 before:absolute before:bottom-2 before:left-[5px] before:top-2 before:w-0.5 before:bg-[#22212c] xl:flex-row xl:items-start xl:justify-between xl:gap-2 xl:before:hidden">
+              <ol aria-labelledby="zonda-timeline" className="relative mt-6 flex flex-col gap-4 before:absolute before:bottom-2 before:left-[5px] before:top-2 before:w-0.5 before:bg-[#22212c] lg:flex-row lg:gap-2 lg:before:bottom-[5px] lg:before:left-0 lg:before:right-0 lg:before:top-auto lg:before:h-0.5 lg:before:w-auto">
                 {stages.map((stage, index) => (
-                  <li key={stage} className="relative flex items-center gap-4 pl-6 xl:flex-col xl:items-center xl:gap-2 xl:pl-0">
-                    <span aria-hidden="true" className="absolute left-0 top-1/2 size-3 -translate-y-1/2 rounded-full border-2 border-[#22212c] bg-background xl:static xl:order-3 xl:size-3 xl:translate-y-0" />
-                    <span className="rounded-full border border-[#22212c] px-[10px] py-1 text-base leading-normal text-[#425466]">{stage}</span>
-                    <span className="text-base leading-normal text-[#707070] xl:order-2">{index + 1}</span>
+                  <li key={stage} className="relative flex items-center gap-4 pl-6 lg:flex-1 lg:flex-col lg:items-center lg:gap-2 lg:pb-6 lg:pl-0">
+                    <span aria-hidden="true" className="absolute left-0 top-1/2 size-3 -translate-y-1/2 rounded-full border-2 border-[#22212c] bg-background lg:bottom-0 lg:left-1/2 lg:top-auto lg:order-3 lg:size-3 lg:-translate-x-1/2 lg:translate-y-0" />
+                    <span className="rounded-full border border-[#22212c] px-2 py-1 text-xs leading-normal text-[#425466]">{stage}</span>
+                    <span className="text-sm leading-normal text-[#707070] lg:order-2">{index + 1}</span>
                   </li>
                 ))}
-                <li aria-hidden="true" className="absolute bottom-[5px] left-0 right-0 hidden h-0.5 bg-[#22212c] xl:block" />
               </ol>
             </div>
             </section>
           <Section title="Role & Tools">
             <div className="grid items-center gap-8 md:grid-cols-[300px_minmax(0,1fr)] md:gap-16 lg:gap-32">
-              <Image src="/images/projects/synapse/synapse-section-03.svg" alt="" width={300} height={300} className="mx-auto h-auto w-full max-w-60 md:max-w-75" />
-              <div className="min-w-0 space-y-8 sm:space-y-10">{[{title:"ROLE:",items:roles},{title:"TOOLS:",items:tools}].map(group => <div key={group.title}><h3 className={`font-sans font-normal ${text}`}>{group.title}</h3><ul aria-label={group.title} className="mt-6 flex flex-wrap gap-3 sm:mt-8 sm:gap-4">{group.items.map(item => <li key={item} className="max-w-full rounded-lg border border-border bg-[#f1f1f1] px-3 py-2 text-sm text-muted sm:text-base">{item}</li>)}</ul></div>)}</div>
+              <Image src="/images/projects/synapse/synapse-section-03.svg" alt="" width={300} height={300} className="project-section-illustration-white mx-auto h-auto w-full max-w-60 md:max-w-75" />
+              <div className="min-w-0 space-y-8 sm:space-y-10">{[{title:"ROLE:",items:roles},{title:"TOOLS:",items:tools}].map(group => <div key={group.title}><h3 className={`font-sans font-normal ${text}`}>{group.title}</h3><ul aria-label={group.title} className="mt-6 flex flex-wrap gap-3 sm:mt-8 sm:gap-4">{group.items.map(item => <li key={item} className="max-w-full rounded-lg border border-border px-3 py-2 text-sm text-muted sm:text-base">{item}</li>)}</ul></div>)}</div>
             </div>
           </Section>
           <Section title="Research & Insights"><div className="grid items-center gap-8 md:grid-cols-[minmax(0,1fr)_240px] md:gap-16 lg:gap-32"><p className={text}>Hierarchy first, scannable design, UI consistency &amp; decision-focused</p><Illustration name="research" /></div></Section>

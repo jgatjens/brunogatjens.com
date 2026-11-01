@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Bricolage_Grotesque, Fira_Code, Noto_Serif } from "next/font/google";
+import Script from "next/script";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import "./globals.css";
@@ -19,8 +20,18 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${bricolage.variable} ${firaCode.variable} ${notoSerif.variable}`}>
+    <html lang="en" className={`${bricolage.variable} ${firaCode.variable} ${notoSerif.variable}`} suppressHydrationWarning>
       <body className="flex min-h-dvh flex-col">
+        <Script id="color-theme-preference" strategy="beforeInteractive">
+          {`try {
+            const theme = localStorage.getItem("bruno-portfolio-color-theme");
+            if (theme === "light" || theme === "dark") {
+              document.documentElement.dataset.colorTheme = theme;
+            }
+          } catch (error) {
+            console.error("Unable to read the saved color theme preference.", error);
+          }`}
+        </Script>
         <a href="#main-content" className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:bg-background focus:p-4">Skip to content</a>
         <Header />
         <main id="main-content" tabIndex={-1} className="flex-1">{children}</main>

@@ -16,7 +16,7 @@ export function SynapseMetricsImpact() {
           </div>
         </div>
         <Image src="/images/projects/synapse/synapse-section-06.svg" alt="" width={240} height={240}
-          className="mx-auto h-auto w-full max-w-60" />
+          className="project-section-illustration-white mx-auto h-auto w-full max-w-60" />
       </div>
     </section>
   );

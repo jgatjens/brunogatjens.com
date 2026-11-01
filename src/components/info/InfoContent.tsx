@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { SocialLinks } from "./SocialLinks";
 
 export function InfoContent() {
   return (
@@ -18,7 +17,6 @@ export function InfoContent() {
           className="mx-auto size-60 rounded-full lg:mx-0 lg:justify-self-end"
         />
       </div>
-      <SocialLinks />
     </div>
   );
 }

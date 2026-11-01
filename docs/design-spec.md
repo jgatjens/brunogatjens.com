@@ -105,6 +105,34 @@ Will be designed from the desktop system
 Design priority:
 Portfolio artwork should remain the visual focus
 
+### Header and color theme
+
+On mobile, the header uses a 48px avatar and icon-only navigation with 48px rounded targets (44px below 360px), 8px gaps, and a pale-blue active pill. The desktop header uses a 32px avatar and the full “Bruno Gätjens” brand, with text navigation, a pale-blue active pill, 16px navigation gaps, and 130px side insets within a 1280px frame. A theme toggle follows the navigation at every viewport size. It shows a moon in light mode and a sun in dark mode, and saves the selected theme across visits. A saved theme applies site-wide and overrides project-specific themes. Without a saved choice, pages use their existing theme, including Luminus's dark theme.
+
+The homepage “Let’s talk” card has 16px rounded corners, inverts its foreground and outline colors with the active theme, and remains transparent with a 2px outline. The “Schedule a Call” button is fully rounded, uses a #FF383C fill with dark text in light mode and a light fill with dark text in dark mode. Its hover fill is #FF383C in both themes.
+
+The site-wide accent color, including highlighted text, accent icons, and keyboard focus indicators, is #FF383C in both themes.
+
+Homepage project filter tags are fully rounded. The active tag uses #22212C text on a #E1EDFF background; inactive tags have a #CDCDCD stroke and transparent background.
+
+Main navigation links and homepage filter tags use a #E8ECF3 background on hover and keyboard focus.
+
+The footer contains four icon-and-link social links: LinkedIn, Dribbble, ArtStation, and X. The Info page does not repeat these social links.
+
+Project logo graphics render white on project pages. In dark theme only, SVG illustrations in Problem/Solution, Role & Tools, Research & Insights, Learnings, Challenges and Learnings, and Metrics & Impact sections render white, except the Problem/Solution divider surrounding “VS,” which retains its dark strokes. In light theme, these illustrations retain their original colors; illustrations elsewhere are unchanged.
+
+All elements in project timeline sections render in a light color in dark theme.
+
+Role & Tools chips have no fill in either theme; their borders and text remain visible.
+
+The MoveOn Learnings user-flow illustration uses the supplied SVG artwork. In dark theme, only its black fills and strokes change to white; its other colors remain unchanged.
+
+The Synapse Challenges and Learnings workflow image uses the supplied SVG artwork. In dark theme, only its black fills and strokes change to white; its colored details and gradient remain unchanged.
+
+In light theme, all Luminus gallery images use a #22212C background fill behind transparent areas.
+
+Homepage project cards use 12px rounded corners with 8px gaps, a 24px vertical grid inset, and centered white pill labels using 16px regular text. The desktop grid has three columns; the tablet and mobile breakpoints retain two and one columns respectively. The Synapse card uses its Figma thumbnail and the label “Synapse”.
+
 
 ## 5. Design Ambiguity Rule
 

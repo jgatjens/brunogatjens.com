@@ -13,17 +13,19 @@ import { MoveOnDetail } from "./MoveOnDetail";
 import { ZondaDetail } from "./ZondaDetail";
 
 export function ProjectDetail({ project }: { project: ProjectDetailData }) {
-  if (project.slug === "zonda-live") return <ZondaDetail />;
+  if (project.slug === "zonda-live") {
+    return <ZondaDetail />;
+  }
   if (project.slug === "move-on") return <MoveOnDetail />;
   if (project.slug === "envision") return <EnvisionDetail />;
   if (project.gallery) {
     return (
-      <PageContainer className="pt-10 pb-12 sm:pt-16 sm:pb-20 lg:pt-20 lg:pb-32">
+      <PageContainer className="project-page-content pt-10 pb-12 sm:pt-16 sm:pb-20 lg:pt-20 lg:pb-32">
         <article data-project-theme={project.theme} aria-labelledby="project-title">
           {project.showGalleryTitle ? (
             <header className="flex flex-col items-start gap-10 pb-8">
-              <h1 id="project-title" className="font-[family-name:var(--font-noto-serif)] text-4xl font-bold text-black sm:text-5xl">{project.title}</h1>
-              {project.introduction && <p className="w-full text-base leading-normal text-[#22212C]">{project.introduction}</p>}
+              <h1 id="project-title" className="font-[family-name:var(--font-noto-serif)] text-4xl font-bold text-foreground sm:text-5xl">{project.title}</h1>
+              {project.introduction && <p className="w-full text-base leading-normal text-foreground">{project.introduction}</p>}
             </header>
           ) : (
             <>
@@ -51,7 +53,7 @@ export function ProjectDetail({ project }: { project: ProjectDetailData }) {
     );
   }
   return (
-    <PageContainer className="py-section lg:pt-20">
+    <PageContainer className="project-page-content py-section lg:pt-20">
       {project.caseStudyHeader ? <ProjectCaseStudyHeader project={project} /> : (
         <>
           <h1 className="text-4xl font-bold sm:text-5xl">{project.title}</h1>

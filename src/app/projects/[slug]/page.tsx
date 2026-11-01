@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { projects } from "@/content/projects";
 import { projectDetails } from "@/content/project-details";
 import { ProjectDetail } from "@/components/projects/ProjectDetail";
+import { ProjectNavigation } from "@/components/projects/ProjectNavigation";
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
@@ -18,5 +19,14 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
   const { slug } = await params;
   const project = projectDetails.find((project) => project.slug === slug);
   if (!project || !projects.some((project) => project.slug === slug)) notFound();
-  return <ProjectDetail project={project} />;
+  return (
+    <>
+      <ProjectNavigation
+        projects={projects}
+        availableProjectSlugs={projectDetails.map(({ slug }) => slug)}
+        activeSlug={project.slug}
+      />
+      <ProjectDetail project={project} />
+    </>
+  );
 }

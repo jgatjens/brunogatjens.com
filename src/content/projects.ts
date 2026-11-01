@@ -4,6 +4,7 @@ export type Project = {
   slug: string;
   title: string;
   cardLabel: string;
+  navigationLabel?: string;
   categories: ProjectCategory[];
   coverImage: string;
   coverImageAlt: string;
@@ -66,14 +67,15 @@ export const projects: readonly Project[] = [
     categories: ["case-study"],
     coverImage: "/images/projects/tiles/synapse-tile.png",
     coverImageAlt: "Synapse project artwork",
-    coverImageWidth: 694,
-    coverImageHeight: 694,
+    coverImageWidth: 1200,
+    coverImageHeight: 1200,
   },
   {
     slug: "luminus",
     detailHref: "/projects/luminus",
     title: "Luminus",
     cardLabel: "Luminus Brand",
+    navigationLabel: "Luminus",
     categories: ["brand"],
     coverImage: "/images/projects/tiles/luminus-tile.png",
     coverImageAlt: "Luminus project artwork",
@@ -107,6 +109,7 @@ export const projects: readonly Project[] = [
     detailHref: "/projects/childrens-book",
     title: "Children's Book",
     cardLabel: "Children's Book",
+    navigationLabel: "Children's",
     categories: ["2d-art"],
     coverImage: "/images/projects/tiles/childrens-book-tile.png",
     coverImageAlt: "Children's Book project artwork",
@@ -118,6 +121,7 @@ export const projects: readonly Project[] = [
     detailHref: "/projects/character-design",
     title: "Character Design",
     cardLabel: "Character Design",
+    navigationLabel: "Caricature",
     categories: ["2d-art"],
     coverImage: "/images/projects/tiles/character-design-tile.png",
     coverImageAlt: "Character Design project artwork",

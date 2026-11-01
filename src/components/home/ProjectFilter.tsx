@@ -31,7 +31,7 @@ export function ProjectFilter({ projects, categoryLabels }: ProjectFilterProps) 
               <button
                 type="button"
                 aria-pressed={activeFilter === value}
-                className={`min-h-filter-target cursor-pointer border px-3 py-0.5 text-sm leading-tight md:text-base lg:min-h-filter-target-desktop lg:text-filter-desktop ${activeFilter === value ? "border-foreground bg-foreground text-surface" : "border-border"}`}
+                className={`min-h-filter-target cursor-pointer rounded-full border px-3 py-0.5 text-sm leading-tight hover:border-transparent hover:bg-[#e8ecf3] focus-visible:border-transparent focus-visible:bg-[#e8ecf3] md:text-base lg:min-h-filter-target-desktop lg:text-filter-desktop ${activeFilter === value ? "project-filter-active border-transparent" : "border-[#cdcdcd] bg-transparent"}`}
                 onClick={() => setActiveFilter(value)}
               >
                 {label}
