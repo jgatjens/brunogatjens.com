@@ -15,7 +15,7 @@ export function ConsultationCTA({ email }: { email?: string }) {
           <li className="flex items-start gap-2"><GlobeIcon className="mt-0.5 size-4 shrink-0" /><span>Heredia / Costa Rica</span></li>
         </ul>
       </div>
-      {email ? <a id="homepage-schedule-call" target="_blank" rel="noopener noreferrer" className="consultation-cta-button mt-consultation-inner inline-block rounded-full px-6 py-2 text-lg sm:text-xl" href={email} aria-label="Schedule a call with Bruno">Schedule a Call</a> : <span className="consultation-cta-button mt-consultation-inner inline-block rounded-full px-6 py-2 text-lg sm:text-xl" aria-disabled="true">Schedule a Call<span className="sr-only"> — contact link awaiting confirmation</span></span>}
+      {email ? <a id="homepage-schedule-call" target="_blank" rel="noopener noreferrer" className="consultation-cta-button mt-12 inline-block rounded-full px-6 py-2 text-lg sm:text-xl" href={email} aria-label="Schedule a call with Bruno">Schedule a Call</a> : <span className="consultation-cta-button mt-12 inline-block rounded-full px-6 py-2 text-lg sm:text-xl" aria-disabled="true">Schedule a Call<span className="sr-only"> — contact link awaiting confirmation</span></span>}
     </section>
   );
 }
