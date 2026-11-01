@@ -38,15 +38,15 @@ export function FloatingScheduleCall() {
   if (isHomepageCallVisible) return null;
 
   return (
-    <div className="fixed bottom-[calc(24px+env(safe-area-inset-bottom))] left-1/2 z-50 w-max max-w-[calc(100vw-32px)] -translate-x-1/2 rounded-full bg-[#f8fafd] p-4 shadow-[0_4px_4px_rgba(0,0,0,0.12)]">
+    <div className="fixed bottom-[calc(24px+env(safe-area-inset-bottom))] left-1/2 z-50 w-max max-w-[calc(100vw-32px)] -translate-x-1/2 rounded-full bg-[#f8fafd] px-5 py-4 shadow-[0_4px_4px_rgba(0,0,0,0.12)]">
       <a
         href={scheduleCallUrl}
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Schedule a call with Bruno"
-        className="flex items-center justify-center gap-3 rounded-full bg-[#e73266] px-6 py-3 font-sans text-xl font-normal leading-none text-white focus-visible:outline-offset-2 max-[375px]:gap-2 max-[375px]:px-4"
+        className="flex items-center justify-center gap-3 rounded-full bg-[#e73266] px-6 py-2 font-sans text-sm font-normal leading-none text-white focus-visible:outline-offset-2"
       >
-        <UilPhone size={24} color="#f8fafd" aria-hidden="true" focusable="false" className="shrink-0" />
+        <UilPhone size={20} color="#f8fafd" aria-hidden="true" focusable="false" className="shrink-0" />
         <span className="whitespace-nowrap">Schedule a Call</span>
       </a>
     </div>
