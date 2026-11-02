@@ -1,40 +1,40 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useSyncExternalStore } from "react";
 import { usePathname } from "next/navigation";
 import UilPhone from "@iconscout/react-unicons/icons/uil-phone";
 import { scheduleCallUrl } from "@/content/links";
 
+function subscribeToViewport(onChange: () => void) {
+  window.addEventListener("scroll", onChange, { passive: true });
+  window.addEventListener("resize", onChange);
+  return () => {
+    window.removeEventListener("scroll", onChange);
+    window.removeEventListener("resize", onChange);
+  };
+}
+
+function getHomepageCallVisibility(pathname: string) {
+  if (pathname !== "/") return false;
+
+  const homepageCall = document.getElementById("homepage-schedule-call");
+  if (!homepageCall) return false;
+
+  const bounds = homepageCall.getBoundingClientRect();
+  return bounds.top < window.innerHeight && bounds.bottom > 0;
+}
+
+function getServerSnapshot() {
+  return false;
+}
+
 export function FloatingScheduleCall() {
   const pathname = usePathname();
-  const [isHomepageCallVisible, setIsHomepageCallVisible] = useState(false);
-
-  useEffect(() => {
-    if (pathname !== "/") {
-      setIsHomepageCallVisible(false);
-      return;
-    }
-
-    const homepageCall = document.getElementById("homepage-schedule-call");
-    if (!homepageCall) {
-      setIsHomepageCallVisible(false);
-      return;
-    }
-
-    const updateVisibility = () => {
-      const bounds = homepageCall.getBoundingClientRect();
-      setIsHomepageCallVisible(bounds.top < window.innerHeight && bounds.bottom > 0);
-    };
-
-    updateVisibility();
-    window.addEventListener("scroll", updateVisibility, { passive: true });
-    window.addEventListener("resize", updateVisibility);
-    return () => {
-      window.removeEventListener("scroll", updateVisibility);
-      window.removeEventListener("resize", updateVisibility);
-    };
-  }, [pathname]);
-
+  const isHomepageCallVisible = useSyncExternalStore(
+    subscribeToViewport,
+    () => getHomepageCallVisibility(pathname),
+    getServerSnapshot,
+  );
   if (isHomepageCallVisible) return null;
 
   return (

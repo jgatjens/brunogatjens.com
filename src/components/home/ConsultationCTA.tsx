@@ -1,4 +1,5 @@
 import { InfoIcon, ClockIcon, LocationIcon, GlobeIcon } from "@/components/icons";
+import UilPhone from "@iconscout/react-unicons/icons/uil-phone";
 
 export function ConsultationCTA({ email }: { email?: string }) {
   return (
@@ -15,7 +16,7 @@ export function ConsultationCTA({ email }: { email?: string }) {
           <li className="flex items-start gap-2"><GlobeIcon className="mt-0.5 size-4 shrink-0" /><span>Heredia / Costa Rica</span></li>
         </ul>
       </div>
-      {email ? <a id="homepage-schedule-call" target="_blank" rel="noopener noreferrer" className="schedule-call-button mt-12 focus-visible:outline-offset-2" href={email} aria-label="Schedule a call with Bruno">Schedule a Call</a> : <span className="schedule-call-button mt-12" aria-disabled="true">Schedule a Call<span className="sr-only"> — contact link awaiting confirmation</span></span>}
+      {email ? <a id="homepage-schedule-call" target="_blank" rel="noopener noreferrer" className="schedule-call-button mt-12 focus-visible:outline-offset-2" href={email} aria-label="Schedule a call with Bruno"><UilPhone size={20} color="#f8fafd" aria-hidden="true" focusable="false" className="shrink-0" />Schedule a Call</a> : <span className="schedule-call-button mt-12" aria-disabled="true"><UilPhone size={20} color="#f8fafd" aria-hidden="true" focusable="false" className="shrink-0" />Schedule a Call<span className="sr-only"> — contact link awaiting confirmation</span></span>}
     </section>
   );
 }
