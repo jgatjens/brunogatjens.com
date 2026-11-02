@@ -81,5 +81,8 @@ Main routes:
 
 ```text
 /
-├── /info
+├── /about
 └── /projects/[slug]
+```
+
+The former `/info` route permanently redirects to `/about`.

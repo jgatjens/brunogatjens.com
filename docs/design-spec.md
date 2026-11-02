@@ -107,17 +107,17 @@ Portfolio artwork should remain the visual focus
 
 ### Header and color theme
 
-On mobile, the header uses a 48px avatar and icon-only navigation with 48px rounded targets (44px below 360px), 24px gaps, and a pale-blue active pill. The desktop header uses a 32px avatar and the full “Bruno Gätjens” brand, with text navigation, a pale-blue active pill, 24px gaps between links and the theme toggle, and 130px side insets within a 1280px frame. The Info route is labeled “About” in the header. A theme toggle follows the navigation at every viewport size. It shows a moon in light mode and a sun in dark mode, and saves the selected theme across visits. A saved theme applies site-wide and overrides project-specific themes. Without a saved choice, pages use their existing theme, including Luminus's dark theme.
+On mobile, the header uses a 48px avatar and icon-only navigation with 48px rounded targets (44px below 360px), 24px gaps, and a pale-blue active pill. The desktop header uses a 32px avatar and the full “Bruno Gätjens” brand, with text navigation, a pale-blue active pill, 24px gaps between links and the theme toggle, and 130px side insets within a 1280px frame. The About route is labeled “About” in the header. A theme toggle follows the navigation at every viewport size in a 40px rounded container with a 24px icon and #A7BDDD at 24% opacity on hover and keyboard focus. It shows a moon in light mode and a sun in dark mode, and saves the selected theme across visits. A saved theme applies site-wide and overrides project-specific themes. Without a saved choice, pages use their existing theme, including Luminus's dark theme.
 
-The homepage “Let’s talk” card sits 64px below the project cards, has 16px rounded corners, inverts its foreground and outline colors with the active theme, and remains transparent with a 2px outline. The “Schedule a Call” button sits 48px below the card, is fully rounded, uses a #E73266 fill with white text in light mode and a light fill with dark text in dark mode. Its hover fill is #E73266 in both themes.
+The homepage “Let’s talk” card sits 64px below the project cards, has 16px rounded corners, inverts its foreground and outline colors with the active theme, and remains transparent with a 2px outline. The “Schedule a Call” button sits 48px below the card. The homepage and floating “Schedule a Call” buttons share the same #E73266 fill, white 14px Fira Code text, 20px horizontal and 8px vertical padding, and fully rounded shape in both themes; the floating button also includes a phone icon inside its theme-aware outer container.
 
-A site-wide floating “Schedule a Call” link stays fixed 16px above the viewport bottom and uses the homepage Calendly URL. On the homepage it hides while the in-page “Schedule a Call” link is visible, and returns when that link leaves view. It uses a #E73266 pill with a phone icon inside a #F8FAFD rounded container.
+A site-wide floating “Schedule a Call” link stays fixed 16px above the viewport bottom and uses the homepage Calendly URL. On the homepage it hides while the in-page “Schedule a Call” link is visible, and returns when that link leaves view. It uses a #E73266 pill with a phone icon inside a rounded container that follows the active theme.
 
 The site-wide accent color, including highlighted text, accent icons, and keyboard focus indicators, is #E73266 in both themes.
 
-Homepage project filter tags are fully rounded. The active tag uses #22212C text on a #E1EDFF background; inactive tags have a #CDCDCD stroke and transparent background.
+Homepage project filter tags are fully rounded. The active tag uses #22212C text on a #E1EDFF background; inactive tags have a #A7BDDD stroke at 40% opacity and a transparent background.
 
-Main navigation links and homepage filter tags use a #E8ECF3 background on hover and keyboard focus.
+Inactive main navigation links and unselected homepage filter tags use a #A7BDDD background at 24% opacity on hover. Keyboard focus styling remains available on all items.
 
 The footer contains four icon-and-link social links: LinkedIn, Dribbble, ArtStation, and X. The Info page does not repeat these social links.
 

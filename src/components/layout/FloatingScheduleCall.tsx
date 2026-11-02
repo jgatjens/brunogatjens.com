@@ -38,13 +38,13 @@ export function FloatingScheduleCall() {
   if (isHomepageCallVisible) return null;
 
   return (
-    <div className="fixed bottom-[calc(16px+env(safe-area-inset-bottom))] left-1/2 z-50 w-max max-w-[calc(100vw-32px)] -translate-x-1/2 rounded-full bg-[#f8fafd] px-[10px] py-2 shadow-[0_4px_4px_rgba(0,0,0,0.12)]">
+    <div className="fixed bottom-[calc(16px+env(safe-area-inset-bottom))] left-1/2 z-50 w-max max-w-[calc(100vw-32px)] -translate-x-1/2 rounded-full bg-floating-cta-surface px-[10px] py-2 shadow-[0_4px_4px_rgba(0,0,0,0.12)]">
       <a
         href={scheduleCallUrl}
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Schedule a call with Bruno"
-        className="flex items-center justify-center gap-3 rounded-full bg-[#e73266] px-5 py-2 font-sans text-sm font-normal leading-none text-white focus-visible:outline-offset-2"
+        className="schedule-call-button focus-visible:outline-offset-2"
       >
         <UilPhone size={20} color="#f8fafd" aria-hidden="true" focusable="false" className="shrink-0" />
         <span className="whitespace-nowrap">Schedule a Call</span>

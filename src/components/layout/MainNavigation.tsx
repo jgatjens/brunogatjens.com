@@ -52,7 +52,7 @@ export function MainNavigation() {
     <nav aria-label="Main navigation" className="ml-auto flex shrink-0 flex-nowrap items-center gap-x-6 text-base font-normal">
       {[
         { href: "/", label: "Home", Icon: UilEstate },
-        { href: "/info", label: "About", Icon: UilUserSquare },
+        { href: "/about", label: "About", Icon: UilUserSquare },
       ].map(({ href, label, Icon }) => {
         const isActive = pathname === href;
 
@@ -61,7 +61,7 @@ export function MainNavigation() {
             key={href}
             href={href}
             aria-current={isActive ? "page" : undefined}
-            className={`flex size-12 shrink-0 items-center justify-center rounded-full leading-[21px] hover:bg-[#e8ecf3] focus-visible:bg-[#e8ecf3] max-[360px]:size-11 lg:size-auto lg:px-5 lg:py-2 ${isActive ? "bg-[#e1edff] text-[#22212c]" : ""}`}
+            className={`flex size-12 shrink-0 items-center justify-center rounded-full leading-[21px] ${isActive ? "" : "hover:bg-hover"} focus-visible:bg-hover max-[360px]:size-11 lg:size-auto lg:px-5 lg:py-2 ${isActive ? "bg-[#e1edff] text-[#22212c]" : ""}`}
           >
             <Icon size={24} color="currentColor" aria-hidden="true" focusable="false" className="lg:hidden" />
             <span className="sr-only lg:not-sr-only">{label}</span>
@@ -72,7 +72,7 @@ export function MainNavigation() {
         type="button"
         aria-label={theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}
         onClick={toggleTheme}
-        className="flex size-12 shrink-0 items-center justify-center rounded-full leading-[21px] max-[360px]:size-11 lg:size-6"
+        className="flex size-10 shrink-0 items-center justify-center rounded-full leading-[21px] hover:bg-hover focus-visible:bg-hover"
       >
         {theme === "dark" ? (
           <svg aria-hidden="true" focusable="false" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">

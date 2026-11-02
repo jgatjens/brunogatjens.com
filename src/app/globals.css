@@ -15,6 +15,9 @@
   --color-accent: #e73266;
   --color-focus: #e73266;
   --color-surface: #ffffff;
+  --color-hover: rgb(167 189 221 / 24%);
+  --color-filter-stroke: rgb(167 189 221 / 40%);
+  --color-floating-cta-surface: #f8fafd;
   --spacing-page-gutter: clamp(1rem, 3.125vw, 2.5rem);
   --spacing-section: clamp(3rem, 8vw, 6rem);
   --spacing-project-image-gap: clamp(1rem, 1.875vw, 1.5rem);
@@ -56,6 +59,7 @@
     --color-divider: #64616f;
     --color-focus: #e73266;
     --color-copyright: #f8f9fc;
+    --color-floating-cta-surface: #22212c;
   }
   html[data-color-theme="dark"] body {
     --color-background: #22212c;
@@ -64,6 +68,7 @@
     --color-divider: #64616f;
     --color-focus: #e73266;
     --color-copyright: #f8f9fc;
+    --color-floating-cta-surface: #22212c;
   }
   html[data-color-theme="light"] body {
     --color-background: #f8f9fc;
@@ -100,17 +105,19 @@
     color: #22212c;
     background-color: #e1edff;
   }
-  .consultation-cta-button {
+  .schedule-call-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    border-radius: 9999px;
     background-color: #e73266;
-    color: #f8f9fc;
-  }
-  html[data-color-theme="dark"] .consultation-cta-button {
-    background-color: #f8f9fc;
-    color: #22212c;
-  }
-  .consultation-cta-button:hover {
-    background-color: #e73266;
-    color: #f8f9fc;
+    padding: 0.5rem 1.25rem;
+    color: #fff;
+    font-family: var(--font-fira-code), monospace;
+    font-size: 0.875rem;
+    font-weight: 400;
+    line-height: 1;
   }
   .glass-style {
     background: rgb(255 255 255 / 64%);
