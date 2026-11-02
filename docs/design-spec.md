@@ -113,7 +113,7 @@ The homepage “Let’s talk” card sits 64px below the project cards, has 16px
 
 The About page content spans the full available page-container width. On desktop, the text and 240px portrait sit in separate columns with an 80px gap; on mobile, they remain stacked with the existing 32px gap.
 
-A site-wide floating “Schedule a Call” link stays fixed 16px above the viewport bottom and uses the homepage Calendly URL. On the homepage it hides while the in-page “Schedule a Call” link is visible, and returns when that link leaves view. It uses a #E73266 pill with a phone icon inside a rounded container that follows the active theme.
+A site-wide floating “Schedule a Call” link stays fixed 16px above the viewport bottom and uses the homepage Calendly URL. On the homepage it hides while the in-page “Schedule a Call” link is visible, and returns when that link leaves view. It uses a #E73266 pill with a phone icon inside a rounded container that follows the active theme, with 4px padding on all sides.
 
 The site-wide accent color, including highlighted text, accent icons, and keyboard focus indicators, is #E73266 in both themes.
 
