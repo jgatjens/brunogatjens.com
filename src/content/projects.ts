@@ -65,7 +65,7 @@ export const projects: readonly Project[] = [
     title: "Synapse",
     cardLabel: "Synapse",
     categories: ["case-study"],
-    coverImage: "/images/projects/tiles/synapse-trophy-tile-v3.png",
+    coverImage: "/images/projects/tiles/synapse-trophy-tile-v4.png",
     coverImageAlt: "Trophy illustration with sparkles",
     coverImageWidth: 660,
     coverImageHeight: 660,
