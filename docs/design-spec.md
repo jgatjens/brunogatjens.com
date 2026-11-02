@@ -135,7 +135,7 @@ The Synapse Challenges and Learnings workflow image uses the supplied SVG artwor
 
 In light theme, all Luminus gallery images use a #22212C background fill behind transparent areas.
 
-Homepage project cards use 12px rounded corners with 8px gaps, a 24px vertical grid inset, and centered white pill labels using 16px regular text. The desktop grid has three columns; the tablet and mobile breakpoints retain two and one columns respectively. The Synapse card uses the supplied trophy-and-sparkles illustration and the label “Synapse”.
+Homepage project cards use 12px rounded corners with 8px gaps, a 24px vertical grid inset, and centered white pill labels using 16px regular text. The desktop grid has three columns; the tablet and mobile breakpoints retain two and one columns respectively. The Synapse card uses the latest supplied trophy-and-sparkles illustration and the label “Synapse”.
 
 The About, Luminus, Hookbots, Children's Book, and Character Design page titles use the UI & Props title style: the default bold heading font at 36px, increasing to 48px at the `sm` breakpoint.
 
