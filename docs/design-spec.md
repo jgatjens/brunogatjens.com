@@ -121,7 +121,7 @@ Inactive main navigation links and unselected homepage filter tags use a #A7BDDD
 
 The footer contains four icon-and-link social links: LinkedIn, Dribbble, ArtStation, and X. The Info page does not repeat these social links.
 
-Project logo graphics render white on project pages. In dark theme only, SVG illustrations in Problem/Solution, Role & Tools, Research & Insights, Learnings, Challenges and Learnings, and Metrics & Impact sections render white, except the Problem/Solution divider surrounding “VS,” which retains its dark strokes. In light theme, these illustrations retain their original colors; illustrations elsewhere are unchanged.
+Project logo graphics render white on project pages in dark theme. In light theme, the Zonda Live, MoveOn, Envision, and Synapse title logos render as dark monochrome marks; other project logos retain their existing treatment. In dark theme only, SVG illustrations in Problem/Solution, Role & Tools, Research & Insights, Learnings, Challenges and Learnings, and Metrics & Impact sections render white, except the Problem/Solution divider surrounding “VS,” which retains its dark strokes. In light theme, these illustrations retain their original colors; illustrations elsewhere are unchanged.
 
 All elements in project timeline sections render in a light color in dark theme.
 
@@ -134,6 +134,8 @@ The Synapse Challenges and Learnings workflow image uses the supplied SVG artwor
 In light theme, all Luminus gallery images use a #22212C background fill behind transparent areas.
 
 Homepage project cards use 12px rounded corners with 8px gaps, a 24px vertical grid inset, and centered white pill labels using 16px regular text. The desktop grid has three columns; the tablet and mobile breakpoints retain two and one columns respectively. The Synapse card uses its Figma thumbnail and the label “Synapse”.
+
+Luminus, Hookbots, Children's Book, and Character Design display their page titles using the UI & Props title style: the default bold heading font at 36px, increasing to 48px at the `sm` breakpoint.
 
 
 ## 5. Design Ambiguity Rule

@@ -121,7 +121,7 @@ export const projects: readonly Project[] = [
     detailHref: "/projects/character-design",
     title: "Character Design",
     cardLabel: "Character Design",
-    navigationLabel: "Caricature",
+    navigationLabel: "Character Design",
     categories: ["2d-art"],
     coverImage: "/images/projects/tiles/character-design-tile.png",
     coverImageAlt: "Character Design project artwork",

@@ -92,6 +92,12 @@
   .project-page-content img[src*="/logo-"] {
     filter: brightness(0) invert(1);
   }
+  html:not([data-color-theme="dark"]) .project-page-content img[src*="/images/projects/zonda/logo-zonda.svg"],
+  html:not([data-color-theme="dark"]) .project-page-content img[src*="/images/projects/moveon/logo-moveon.svg"],
+  html:not([data-color-theme="dark"]) .project-page-content img[src*="/images/projects/envision/logo-envision.svg"],
+  html:not([data-color-theme="dark"]) .project-page-content img[src*="/images/projects/synapse/logo-synapse.svg"] {
+    filter: brightness(0);
+  }
   html[data-color-theme="light"] article[data-project-theme="dark"] img {
     background-color: #22212c;
   }

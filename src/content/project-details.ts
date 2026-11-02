@@ -78,6 +78,7 @@ export const projectDetails: readonly ProjectDetailData[] = [
     title: "The World of Luminus",
     theme: "dark",
     introduction: "The World of Luminus is a cosmic-fantasy brand featuring vibrant neon palettes, glowing holographic effects, luminous gradients, and mystical symbols. Its visual identity blends theatrical scenography with dark, ethereal atmospheres to evoke wonder, energy, and euphoria.",
+    showGalleryTitle: true,
     sections: [],
     gallery: [
       { id: "luminus-logo", src: "/images/projects/luminus/luminus-01.png", alt: "Project Luminus lettering framed by neon foliage and butterflies", width: 2080, height: 1302 },

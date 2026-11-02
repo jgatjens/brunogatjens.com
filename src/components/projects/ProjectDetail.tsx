@@ -24,7 +24,7 @@ export function ProjectDetail({ project }: { project: ProjectDetailData }) {
         <article data-project-theme={project.theme} aria-labelledby="project-title">
           {project.showGalleryTitle ? (
             <header className="flex flex-col items-start gap-10 pb-8">
-              <h1 id="project-title" className="font-[family-name:var(--font-noto-serif)] text-4xl font-bold text-foreground sm:text-5xl">{project.title}</h1>
+              <h1 id="project-title" className="text-4xl font-bold sm:text-5xl">{project.title}</h1>
               {project.introduction && <p className="w-full text-base leading-normal text-foreground">{project.introduction}</p>}
             </header>
           ) : (
