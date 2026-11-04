@@ -40,4 +40,19 @@ Tablet
 Simplify layout
 ↓
 Mobile
-´´´
+```
+
+---
+
+# 3. Header and project navigation
+
+- Keep the glass navigation panel centered and capped at 1280px on wide screens.
+- Keep the closed menu exactly 72px tall overall across themes and breakpoints; the project submenu adds height only in its open state.
+- Inset the menu 8px from the top and both horizontal viewport edges on mobile, increasing to 16px at the `md` breakpoint.
+- On desktop, show the avatar and name alongside text links for Home, Work, About, and “Let’s Talk”.
+- On mobile, show the 48px avatar and icon-only controls; reduce controls to 44px below 360px.
+- Keep the project submenu within the shared header panel. Desktop project links share the available row; mobile links scroll horizontally with arrow controls and keep the active project in view.
+- Preserve the closed pill shape and use a 36px radius while the project submenu is open.
+- Animate the open/close transition smoothly, while respecting reduced-motion preferences.
+- Let the expanded menu overlay page content without changing the header's reserved layout height.
+- Use the same light/dark theme behavior and 88%-opaque white/black glass surfaces at every breakpoint.

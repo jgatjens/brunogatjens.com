@@ -1,13 +1,26 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useSyncExternalStore } from "react";
 import UilEstate from "@iconscout/react-unicons/icons/uil-estate";
+import UilPhone from "@iconscout/react-unicons/icons/uil-phone";
 import UilUserSquare from "@iconscout/react-unicons/icons/uil-user-square";
+import { projects } from "@/content/projects";
+import { scheduleCallUrl } from "@/content/links";
+import { ProjectNavigation } from "@/components/projects/ProjectNavigation";
 
 const colorThemeStorageKey = "bruno-portfolio-color-theme";
 type ColorTheme = "light" | "dark";
+
+function getFirstProjectHref() {
+  const href = projects[0]?.detailHref;
+  if (!href) throw new Error("The first project must have a detail URL for Work navigation.");
+  return href;
+}
+
+const firstProjectHref = getFirstProjectHref();
 
 function subscribeToColorTheme(onChange: () => void) {
   const observer = new MutationObserver(onChange);
@@ -35,9 +48,11 @@ export function MainNavigation() {
     getColorThemeSnapshot,
     getServerColorThemeSnapshot,
   );
+  const activeProject = projects.find((project) => project.detailHref === pathname);
+  const isDark = theme === "dark";
 
   const toggleTheme = () => {
-    const nextTheme = theme === "dark" ? "light" : "dark";
+    const nextTheme = isDark ? "light" : "dark";
 
     document.documentElement.dataset.colorTheme = nextTheme;
 
@@ -48,42 +63,112 @@ export function MainNavigation() {
     }
   };
 
-  return (
-    <nav aria-label="Main navigation" className="ml-auto flex shrink-0 flex-nowrap items-center gap-x-6 text-base font-normal">
-      {[
-        { href: "/", label: "Home", Icon: UilEstate },
-        { href: "/about", label: "About", Icon: UilUserSquare },
-      ].map(({ href, label, Icon }) => {
-        const isActive = pathname === href;
+  const links = [
+    {
+      href: "/",
+      label: "Home",
+      active: pathname === "/",
+      icon: <UilEstate size={24} color="currentColor" aria-hidden="true" focusable="false" className="lg:hidden" />,
+    },
+    {
+      href: firstProjectHref,
+      label: "Work",
+      active: pathname.startsWith("/projects/"),
+      icon: (
+        <svg aria-hidden="true" focusable="false" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="lg:hidden">
+          <rect x="3" y="7" width="18" height="14" rx="2" stroke="currentColor" strokeWidth="2" />
+          <path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 12h18M10 12v2h4v-2" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+      ),
+    },
+    {
+      href: "/about",
+      label: "About",
+      active: pathname === "/about",
+      icon: <UilUserSquare size={24} color="currentColor" aria-hidden="true" focusable="false" className="lg:hidden" />,
+    },
+  ];
 
-        return (
-          <Link
-            key={href}
-            href={href}
-            aria-current={isActive ? "page" : undefined}
-            className={`flex size-12 shrink-0 items-center justify-center rounded-full leading-[21px] ${isActive ? "" : "hover:bg-hover"} focus-visible:bg-hover max-[360px]:size-11 lg:size-auto lg:px-5 lg:py-2 ${isActive ? "bg-[#e1edff] text-[#22212c]" : ""}`}
+  return (
+    <div
+      className={`site-menu glass-style mx-auto w-full max-w-[1280px] ${activeProject ? "site-menu--open" : ""}`}
+    >
+      <div className="flex h-[70px] items-center justify-between gap-2 px-4 py-[11px] max-[360px]:gap-0 sm:px-5 md:px-6 md:py-[11px]">
+        <Link
+          href="/"
+          aria-label="Bruno Gätjens home"
+          className="flex shrink-0 items-center gap-2 text-sm font-normal md:gap-6 md:text-base"
+        >
+          <Image
+            src="/images/avatar-me.png"
+            alt=""
+            width={96}
+            height={96}
+            sizes="(min-width: 768px) 32px, 48px"
+            className="size-12 shrink-0 rounded-full max-[360px]:size-11 md:size-8"
+          />
+          <span className="hidden md:inline">Bruno Gätjens</span>
+        </Link>
+
+        <nav aria-label="Main navigation" className="ml-auto flex shrink-0 items-center gap-1 max-[360px]:gap-0 sm:gap-2">
+          {links.map(({ href, label, active, icon }) => (
+            <Link
+              key={label}
+              href={href}
+              aria-current={active ? "page" : undefined}
+              className={`flex size-12 shrink-0 items-center justify-center rounded-full px-0 text-base font-normal leading-[21px] transition-colors max-[360px]:size-11 lg:h-auto lg:w-auto lg:px-4 lg:py-2 ${
+                active
+                  ? isDark
+                    ? "bg-[#1764d8] text-white"
+                    : "bg-[#e1edff] text-[#22212c]"
+                  : "hover:bg-hover focus-visible:bg-hover"
+              }`}
+            >
+              {icon}
+              <span className="sr-only lg:not-sr-only">{label}</span>
+            </Link>
+          ))}
+
+          <a
+            href={scheduleCallUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Let's Talk (opens in a new tab)"
+            className="flex size-12 shrink-0 items-center justify-center gap-3 rounded-full bg-accent px-0 text-white transition-opacity hover:opacity-90 focus-visible:outline-offset-2 max-[360px]:size-11 lg:h-auto lg:w-auto lg:px-5 lg:py-2"
           >
-            <Icon size={24} color="currentColor" aria-hidden="true" focusable="false" className="lg:hidden" />
-            <span className="sr-only lg:not-sr-only">{label}</span>
-          </Link>
-        );
-      })}
-      <button
-        type="button"
-        aria-label={theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}
-        onClick={toggleTheme}
-        className="flex size-10 shrink-0 items-center justify-center rounded-full leading-[21px] hover:bg-hover focus-visible:bg-hover"
+            <UilPhone size={24} color="currentColor" aria-hidden="true" focusable="false" />
+            <span className="sr-only whitespace-nowrap font-semibold lg:not-sr-only">Let&apos;s Talk</span>
+          </a>
+
+          <button
+            type="button"
+            aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
+            onClick={toggleTheme}
+            className="flex size-12 shrink-0 items-center justify-center rounded-full transition-colors hover:bg-hover focus-visible:bg-hover max-[360px]:size-11 md:size-10"
+          >
+            {isDark ? (
+              <svg aria-hidden="true" focusable="false" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="12" cy="12" r="4" stroke="currentColor" strokeWidth="2" />
+                <path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+              </svg>
+            ) : (
+              <svg aria-hidden="true" focusable="false" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M20.5 14.5A8.5 8.5 0 0 1 9.5 3.5 8.5 8.5 0 1 0 20.5 14.5Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            )}
+          </button>
+        </nav>
+      </div>
+
+      <div
+        aria-hidden={!activeProject}
+        inert={!activeProject}
+        className={`site-menu-submenu ${activeProject ? "site-menu-submenu--open" : ""}`}
       >
-        {theme === "dark" ? (
-          <svg aria-hidden="true" focusable="false" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M5 12C5 11.7348 4.89464 11.4804 4.70711 11.2929C4.51957 11.1054 4.26522 11 4 11H3C2.73478 11 2.48043 11.1054 2.29289 11.2929C2.10536 11.4804 2 11.7348 2 12C2 12.2652 2.10536 12.5196 2.29289 12.7071C2.48043 12.8946 2.73478 13 3 13H4C4.26522 13 4.51957 12.8946 4.70711 12.7071C4.89464 12.5196 5 12.2652 5 12ZM5.64 17L4.93 17.71C4.74375 17.8974 4.63921 18.1508 4.63921 18.415C4.63921 18.6792 4.74375 18.9326 4.93 19.12C5.11736 19.3063 5.37081 19.4108 5.635 19.4108C5.89919 19.4108 6.15264 19.3063 6.34 19.12L7.05 18.41C7.21383 18.2187 7.29943 17.9726 7.28971 17.7209C7.27999 17.4693 7.17566 17.2305 6.99756 17.0524C6.81947 16.8743 6.58073 16.77 6.32905 16.7603C6.07738 16.7506 5.8313 16.8362 5.64 17V17ZM12 5C12.2652 5 12.5196 4.89464 12.7071 4.70711C12.8946 4.51957 13 4.26522 13 4V3C13 2.73478 12.8946 2.48043 12.7071 2.29289C12.5196 2.10536 12.2652 2 12 2C11.7348 2 11.4804 2.10536 11.2929 2.29289C11.1054 2.48043 11 2.73478 11 3V4C11 4.26522 11.1054 4.51957 11.2929 4.70711C11.4804 4.89464 11.7348 5 12 5ZM17.66 7.34C17.9223 7.3389 18.1737 7.23474 18.36 7.05L19.07 6.34C19.1747 6.25035 19.2597 6.14004 19.3197 6.01597C19.3797 5.89191 19.4135 5.75677 19.4188 5.61905C19.4241 5.48133 19.4009 5.344 19.3506 5.21568C19.3004 5.08735 19.2241 4.9708 19.1266 4.87335C19.0292 4.77589 18.9126 4.69964 18.7843 4.64936C18.656 4.59909 18.5187 4.57588 18.3809 4.5812C18.2432 4.58652 18.1081 4.62025 17.984 4.68027C17.86 4.7403 17.7496 4.82532 17.66 4.93L17 5.64C16.8137 5.82736 16.7092 6.08081 16.7092 6.345C16.7092 6.60919 16.8137 6.86264 17 7.05C17.1763 7.22536 17.4116 7.32875 17.66 7.34V7.34ZM5.66 7.05C5.84626 7.23474 6.09766 7.3389 6.36 7.34C6.49161 7.34076 6.62207 7.31554 6.74391 7.26577C6.86574 7.21601 6.97656 7.14268 7.07 7.05C7.25625 6.86264 7.36079 6.60919 7.36079 6.345C7.36079 6.08081 7.25625 5.82736 7.07 5.64L6.36 4.93C6.26742 4.8361 6.15725 4.76136 6.03578 4.71005C5.91432 4.65873 5.78393 4.63184 5.65207 4.63091C5.52021 4.62998 5.38946 4.65503 5.26728 4.70463C5.14511 4.75424 5.0339 4.82742 4.94 4.92C4.8461 5.01258 4.77136 5.12275 4.72005 5.24422C4.66873 5.36568 4.64184 5.49607 4.64091 5.62793C4.63903 5.89423 4.74302 6.15037 4.93 6.34L5.66 7.05ZM21 11H20C19.7348 11 19.4804 11.1054 19.2929 11.2929C19.1054 11.4804 19 11.7348 19 12C19 12.2652 19.1054 12.5196 19.2929 12.7071C19.4804 12.8946 19.7348 13 20 13H21C21.2652 13 21.5196 12.8946 21.7071 12.7071C21.8946 12.5196 22 12.2652 22 12C22 11.7348 21.8946 11.4804 21.7071 11.2929C21.5196 11.1054 21.2652 11 21 11ZM18.36 17C18.17 16.8943 17.9508 16.8534 17.7355 16.8835C17.5202 16.9136 17.3205 17.0131 17.1668 17.1668C17.0131 17.3205 16.9136 17.5202 16.8835 17.7355C16.8534 17.9508 16.8943 18.17 17 18.36L17.71 19.07C17.8974 19.2563 18.1508 19.3608 18.415 19.3608C18.6792 19.3608 18.9326 19.2563 19.12 19.07C19.3063 18.8826 19.4108 18.6292 19.4108 18.365C19.4108 18.1008 19.3063 17.8474 19.12 17.66L18.36 17ZM12 6.5C10.9122 6.5 9.84883 6.82257 8.94436 7.42692C8.03989 8.03126 7.33494 8.89025 6.91866 9.89524C6.50238 10.9002 6.39346 12.0061 6.60568 13.073C6.8179 14.1399 7.34172 15.1199 8.11091 15.8891C8.8801 16.6583 9.86011 17.1821 10.927 17.3943C11.9939 17.6065 13.0998 17.4976 14.1048 17.0813C15.1098 16.6651 15.9687 15.9601 16.5731 15.0556C17.1774 14.1512 17.5 13.0878 17.5 12C17.4974 10.5421 16.917 9.14471 15.8862 8.11383C14.8553 7.08295 13.4579 6.50264 12 6.5ZM12 15.5C11.3078 15.5 10.6311 15.2947 10.0555 14.9101C9.47993 14.5256 9.03133 13.9789 8.76642 13.3394C8.50151 12.6999 8.4322 11.9961 8.56725 11.3172C8.7023 10.6383 9.03564 10.0146 9.52513 9.52513C10.0146 9.03564 10.6383 8.7023 11.3172 8.56725C11.9961 8.4322 12.6999 8.56725 13.3394 8.76642C13.9789 9.03133 14.5256 9.47993 14.9101 10.0555C15.2947 10.6311 15.5 11.3078 15.5 12C15.5 12.9283 15.1313 13.8185 14.4749 14.4749C13.8185 15.1313 12.9283 15.5 12 15.5V15.5ZM12 19C11.7348 19 11.4804 19.1054 11.2929 19.2929C11.1054 19.4804 11 19.7348 11 20V21C11 21.2652 11.1054 21.5196 11.2929 21.7071C11.4804 21.8946 11.7348 22 12 22C12.2652 22 12.5196 21.8946 12.7071 21.7071C12.8946 21.5196 13 21.2652 13 21V20C13 19.7348 12.8946 19.4804 12.7071 19.2929C12.5196 19.1054 12.2652 19 12 19Z" fill="currentColor" />
-          </svg>
-        ) : (
-          <svg aria-hidden="true" focusable="false" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M21.6401 13.0002C21.4958 12.8808 21.3208 12.8045 21.1352 12.7797C20.9496 12.755 20.7607 12.7828 20.5901 12.8602C19.5327 13.344 18.383 13.5931 17.2201 13.5902C15.069 13.5876 13.0061 12.7346 11.4813 11.2173C9.95644 9.69991 9.09333 7.64126 9.08014 5.49015C9.0847 4.81598 9.16861 4.1447 9.33014 3.49015C9.36441 3.31569 9.35156 3.13524 9.29289 2.96741C9.23423 2.79957 9.13187 2.6504 8.99638 2.53528C8.86088 2.42016 8.69714 2.34325 8.52203 2.31247C8.34692 2.28168 8.16677 2.29814 8.00014 2.36015C6.43246 3.06506 5.06971 4.15691 4.03989 5.53313C3.01008 6.90936 2.34702 8.52478 2.11298 10.2276C1.87895 11.9305 2.08164 13.6649 2.70201 15.2679C3.32237 16.8709 4.34005 18.2899 5.65944 19.3916C6.97882 20.4933 8.55661 21.2415 10.2446 21.566C11.9325 21.8904 13.6753 21.7804 15.3091 21.2464C16.9429 20.7123 18.4141 19.7717 19.5845 18.5129C20.755 17.2541 21.5862 15.7184 22.0001 14.0502C22.0506 13.8591 22.0433 13.6575 21.9792 13.4706C21.9151 13.2837 21.7971 13.12 21.6401 13.0002V13.0002ZM12.1401 19.6902C10.4619 19.6783 8.82834 19.148 7.46313 18.1719C6.09792 17.1957 5.0678 15.8215 4.51382 14.2373C3.95984 12.6531 3.90907 10.9363 4.36847 9.32216C4.82788 7.70797 5.77499 6.27525 7.08014 5.22015V5.49015C7.08278 8.17863 8.15195 10.7562 10.053 12.6573C11.954 14.5583 14.5317 15.6275 17.2201 15.6302C17.926 15.6327 18.6301 15.559 19.3201 15.4102C18.63 16.7157 17.5966 17.808 16.3313 18.5693C15.066 19.3306 13.6168 19.732 12.1401 19.7302V19.6902Z" fill="currentColor" />
-          </svg>
-        )}
-      </button>
-    </nav>
+        <div className="site-menu-submenu-content">
+          <ProjectNavigation projects={projects} activeSlug={activeProject?.slug ?? ""} />
+        </div>
+      </div>
+    </div>
   );
 }

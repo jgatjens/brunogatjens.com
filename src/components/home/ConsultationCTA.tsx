@@ -13,10 +13,10 @@ export function ConsultationCTA({ email }: { email?: string }) {
         <ul className="mt-6 space-y-5 text-consultation-body font-semibold">
           <li className="flex items-start gap-2"><ClockIcon className="mt-0.5 size-4 shrink-0" /><span>30 min</span></li>
           <li className="flex items-start gap-2"><LocationIcon className="mt-0.5 size-4 shrink-0" /><span>Zoom</span></li>
-          <li className="flex items-start gap-2"><GlobeIcon className="mt-0.5 size-4 shrink-0" /><span>Heredia / Costa Rica</span></li>
+          <li className="flex items-start gap-2"><GlobeIcon className="mt-0.5 size-4 shrink-0" /><span>Costa Rica</span></li>
         </ul>
       </div>
-      {email ? <a id="homepage-schedule-call" target="_blank" rel="noopener noreferrer" className="schedule-call-button mt-12 focus-visible:outline-offset-2" href={email} aria-label="Schedule a call with Bruno"><UilPhone size={20} color="#f8fafd" aria-hidden="true" focusable="false" className="shrink-0" />Schedule a Call</a> : <span className="schedule-call-button mt-12" aria-disabled="true"><UilPhone size={20} color="#f8fafd" aria-hidden="true" focusable="false" className="shrink-0" />Schedule a Call<span className="sr-only"> — contact link awaiting confirmation</span></span>}
+      {email ? <a target="_blank" rel="noopener noreferrer" className="schedule-call-button mt-12 focus-visible:outline-offset-2" href={email} aria-label="Schedule a call with Bruno"><UilPhone size={20} color="#f8fafd" aria-hidden="true" focusable="false" className="shrink-0" />Schedule a Call</a> : <span className="schedule-call-button mt-12" aria-disabled="true"><UilPhone size={20} color="#f8fafd" aria-hidden="true" focusable="false" className="shrink-0" />Schedule a Call<span className="sr-only"> — contact link awaiting confirmation</span></span>}
     </section>
   );
 }

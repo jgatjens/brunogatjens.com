@@ -31,8 +31,7 @@ Avoid adding unnecessary UI decoration.
 
 Do not introduce visual styles that are not supported by the design, such as:
 
-- heavy shadows
-- glassmorphism
+- heavy shadows outside the glass header
 - gradients
 - excessive rounded cards
 - strong 3D effects
@@ -107,13 +106,15 @@ Portfolio artwork should remain the visual focus
 
 ### Header and color theme
 
-On mobile, the header uses a 48px avatar and icon-only navigation with 48px rounded targets (44px below 360px), 24px gaps, and a pale-blue active pill. The desktop header uses a 32px avatar and the full “Bruno Gätjens” brand, with text navigation, a pale-blue active pill, 24px gaps between links and the theme toggle, and 130px side insets within a 1280px frame. The About route is labeled “About” in the header. A theme toggle follows the navigation at every viewport size in a 40px rounded container with a 24px icon and #A7BDDD at 24% opacity on hover and keyboard focus. It shows a moon in light mode and a sun in dark mode, and saves the selected theme across visits. A saved theme applies site-wide and overrides project-specific themes. Without a saved choice, pages use their existing theme, including Luminus's dark theme.
+The shared navigation panel is a centered, sticky glass surface up to 1280px wide. Its closed state is fully rounded; when a project is open, the panel expands to include the project submenu and uses a 36px radius. The light panel uses white at 88% opacity, and the dark panel uses black at 88% opacity. Apply the supplied glass settings in the supported CSS treatment: Refraction 80, Depth 84, Dispersion 50, Frost 6, and Splay 21. Frost is represented with a 6px backdrop blur and restrained highlights; browser CSS does not expose direct refraction/dispersion controls.
 
-The homepage “Let’s talk” card sits 64px below the project cards, has 16px rounded corners, inverts its foreground and outline colors with the active theme, and remains transparent with a 2px outline. Its “Let’s talk” heading uses the default Bricolage Grotesque heading font. The “Schedule a Call” button sits 48px below the card. The homepage and floating “Schedule a Call” buttons share the same #E73266 fill, white 16px Fira Code text, 20px horizontal and 12px vertical padding, fully rounded shape, and 20px phone icon in both themes; the floating button also places its icon and button inside a theme-aware outer container.
+The closed main menu is 72px tall overall in both themes and at every viewport size. The header has an 8px top and horizontal inset on mobile, increasing to 16px at the `md` breakpoint. On mobile, the header uses a 48px avatar and icon-only navigation with 48px rounded targets (44px below 360px). Desktop shows the full “Bruno Gätjens” brand and text navigation. The main links are Home, Work, and About, followed by a pink “Let’s Talk” link and the theme toggle. Work links directly to the first project; project pages show the ordered project submenu inside the same glass panel. Opening and closing the submenu smoothly animates the panel radius and submenu reveal; reduced-motion preferences disable the transition. The submenu stays horizontally scrollable, with mobile arrow controls and the active project kept in view; the first project begins at the start of the row.
+
+The active main-navigation and project links use a pale-blue pill in light mode and a blue pill in dark mode. The 24px moon/sun theme control follows the navigation at every viewport size and saves the selected theme across visits. A saved theme applies site-wide and overrides project-specific themes. Without a saved choice, pages use their existing theme, including Luminus's dark theme.
+
+The homepage “Let’s talk” card sits 64px below the project cards, has 16px rounded corners, inverts its foreground and outline colors with the active theme, and remains transparent with a 2px outline. Its “Let’s talk” heading uses the default Bricolage Grotesque heading font. The “Schedule a Call” button sits 48px below the card. The homepage “Schedule a Call” button uses a #E73266 fill, white 16px Fira Code text, 20px horizontal and 12px vertical padding, a fully rounded shape, and a 20px phone icon in both themes.
 
 The About page content spans the full available page-container width. On desktop, the text and 240px portrait sit in separate columns with an 80px gap; on mobile, they remain stacked with the existing 32px gap.
-
-A site-wide floating “Schedule a Call” link stays fixed 16px above the viewport bottom and uses the homepage Calendly URL. On the homepage it hides while the in-page “Schedule a Call” link is visible, and returns when that link leaves view. It uses a #E73266 pill with a phone icon inside a rounded container that follows the active theme, with 4px padding on all sides.
 
 The site-wide accent color, including highlighted text, accent icons, and keyboard focus indicators, is #E73266 in both themes.
 
