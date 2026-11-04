@@ -134,6 +134,8 @@ The MoveOn Learnings user-flow illustration uses the supplied SVG artwork. In da
 
 The Synapse Challenges and Learnings workflow image uses the supplied SVG artwork. In dark theme, only its black fills and strokes change to white; its colored details and gradient remain unchanged.
 
+The Nexomon icon exploration sheets in UI & Props sections 04–06 use white fills in dark theme; all other artwork colors remain unchanged.
+
 In light theme, all Luminus gallery images use a #22212C background fill behind transparent areas.
 
 Homepage project cards use 12px rounded corners with 8px gaps, a 24px vertical grid inset, and centered white pill labels using 16px regular text. The desktop grid has three columns; the tablet and mobile breakpoints retain two and one columns respectively. The Synapse card uses the latest supplied trophy illustration and the label “Synapse”.

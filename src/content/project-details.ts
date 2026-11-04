@@ -4,6 +4,7 @@ export type ProjectArtworkData = {
   width: number;
   height: number;
   src: string;
+  darkSrc?: string;
   loading?: "eager" | "lazy";
   displayFrame?: { width: number; height: number };
   maxWidth?: number;
@@ -162,7 +163,8 @@ export const projectDetails: readonly ProjectDetailData[] = [
             "images": [
               {
                 "id": "nexomon-section-04-item-01",
-                "src": "/images/projects/nexomon/nexomon-section-04-item-01.png",
+                "src": "/images/projects/nexomon/nexomon-section-04-item-01.svg",
+                "darkSrc": "/images/projects/nexomon/nexomon-section-04-item-01-dark.svg",
                 "alt": "Nexomon icon exploration sheet",
                 "width": 2080,
                 "height": 1560
@@ -175,7 +177,8 @@ export const projectDetails: readonly ProjectDetailData[] = [
             "images": [
               {
                 "id": "nexomon-section-05-item-01",
-                "src": "/images/projects/nexomon/nexomon-section-05-item-01.png",
+                "src": "/images/projects/nexomon/nexomon-section-05-item-01.svg",
+                "darkSrc": "/images/projects/nexomon/nexomon-section-05-item-01-dark.svg",
                 "alt": "Nexomon additional icon exploration sheet",
                 "width": 4160,
                 "height": 3120
@@ -188,7 +191,8 @@ export const projectDetails: readonly ProjectDetailData[] = [
             "images": [
               {
                 "id": "nexomon-section-06-item-01",
-                "src": "/images/projects/nexomon/nexomon-section-06-item-01.png",
+                "src": "/images/projects/nexomon/nexomon-section-06-item-01.svg",
+                "darkSrc": "/images/projects/nexomon/nexomon-section-06-item-01-dark.svg",
                 "alt": "Nexomon element icon sheet",
                 "width": 2080,
                 "height": 1560

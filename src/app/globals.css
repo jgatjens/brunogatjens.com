@@ -175,6 +175,21 @@
     min-height: 0;
     overflow: hidden;
   }
+  img.project-artwork-dark {
+    display: none;
+  }
+  html:not([data-color-theme="dark"]) img.project-artwork-light {
+    display: block;
+  }
+  html:not([data-color-theme="dark"]) img.project-artwork-dark {
+    display: none;
+  }
+  html[data-color-theme="dark"] img.project-artwork-light {
+    display: none;
+  }
+  html[data-color-theme="dark"] img.project-artwork-dark {
+    display: block;
+  }
   @media (prefers-reduced-motion: reduce) {
     .site-menu,
     .site-menu-submenu {
