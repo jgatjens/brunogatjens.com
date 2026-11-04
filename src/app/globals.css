@@ -150,6 +150,9 @@
     overflow-anchor: none;
     transition: border-radius 240ms cubic-bezier(0.2, 0.75, 0.25, 1);
   }
+  .site-header-panel--hidden {
+    transform: translateY(calc(-100% - 8px));
+  }
   .site-menu--open {
     border-radius: 36px;
   }

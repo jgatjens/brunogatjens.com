@@ -48,7 +48,8 @@ Mobile
 
 - Keep the glass navigation panel centered and capped at 1280px on wide screens.
 - Keep the closed menu exactly 72px tall overall across themes and breakpoints; the project submenu adds height only in its open state.
-- Inset the menu 8px from the top and both horizontal viewport edges on mobile, increasing to 16px at the `md` breakpoint.
+- Inset the menu 8px from the top at every viewport size; use an 8px horizontal inset on mobile, increasing to 16px at the `md` breakpoint.
+- Slide the header out of view on downward scrolling, delaying 500ms only when scrolling begins at the top of the page; show it immediately on upward scrolling or keyboard focus.
 - On desktop, show the avatar and name alongside text links for Home, Work, About, and “Let’s Talk”.
 - On mobile, show the 48px avatar and icon-only controls; reduce controls to 44px below 360px.
 - Keep the project submenu within the shared header panel. Desktop project links share the available row; mobile links scroll horizontally with arrow controls and keep the active project in view.
