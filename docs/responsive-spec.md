@@ -56,4 +56,4 @@ Mobile
 - Preserve the closed pill shape and use a 36px radius while the project submenu is open.
 - Animate the open/close transition smoothly, while respecting reduced-motion preferences.
 - Let the expanded menu overlay page content without changing the header's reserved layout height.
-- Use the same light/dark theme behavior and 88%-opaque white/black glass surfaces at every breakpoint.
+- Use the same light/dark theme behavior and 88%-opaque white/#22212C glass surfaces at every breakpoint.
