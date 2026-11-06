@@ -157,6 +157,11 @@
     backdrop-filter: blur(6px) saturate(150%);
     -webkit-backdrop-filter: blur(6px) saturate(150%);
   }
+  html[data-color-theme="dark"] .glass-style,
+  html:not([data-color-theme="light"]):has([data-project-theme="dark"]) .glass-style {
+    border-color: rgb(255 255 255 / 14%);
+    box-shadow: inset 0 1px 1px rgb(255 255 255 / 25%), inset 0 -1px 2px rgb(117 59 145 / 8%);
+  }
   .site-menu {
     border-radius: 9999px;
     overflow-anchor: none;
