@@ -122,7 +122,7 @@ Homepage project filter tags are fully rounded. The active tag uses #22212C text
 
 Inactive main navigation links and unselected homepage filter tags use a #A7BDDD background at 24% opacity on hover. Keyboard focus styling remains available on all items.
 
-The footer contains four icon-and-link social links: LinkedIn, Dribbble, ArtStation, and X. The Info page does not repeat these social links.
+The footer contains five icon-only social links with accessible labels: LinkedIn, Dribbble, ArtStation, Instagram, and X. Instagram follows ArtStation. Icons use #CB998F and change to #E73266 on hover or keyboard focus. The Info page does not repeat these social links.
 
 Project logo graphics render white on project pages in dark theme. In light theme, the Zonda Live, MoveOn, Envision, and Synapse title logos render as dark monochrome marks; other project logos retain their existing treatment. In dark theme only, SVG illustrations in Problem/Solution, Role & Tools, Research & Insights, Learnings, Challenges and Learnings, and Metrics & Impact sections render white, except the Problem/Solution divider surrounding “VS,” which retains its dark strokes. In light theme, these illustrations retain their original colors; illustrations elsewhere are unchanged.
 
