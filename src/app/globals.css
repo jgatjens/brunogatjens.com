@@ -54,7 +54,19 @@
 }
 
 @layer base {
-  html { scrollbar-gutter: stable; }
+  html {
+    scrollbar-gutter: stable;
+    background-color: #f8f9fc;
+  }
+  html:has([data-project-theme="dark"]) {
+    background-color: #22212c;
+  }
+  html[data-color-theme="dark"] {
+    background-color: #22212c;
+  }
+  html[data-color-theme="light"] {
+    background-color: #f8f9fc;
+  }
   body:has([data-project-theme="dark"]) {
     --color-background: #22212c;
     --color-foreground: #f8f9fc;
