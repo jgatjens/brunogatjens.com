@@ -110,7 +110,7 @@ export function MainNavigation() {
           <span className="hidden md:inline">Bruno Gätjens</span>
         </Link>
 
-        <nav aria-label="Main navigation" className="ml-auto flex shrink-0 items-center gap-1 max-[360px]:gap-0 sm:gap-2">
+        <nav aria-label="Main navigation" className="ml-auto flex shrink-0 items-center gap-1 max-[360px]:gap-0 sm:gap-2 lg:gap-6">
           {links.map(({ href, label, active, icon }) => (
             <Link
               key={label}
