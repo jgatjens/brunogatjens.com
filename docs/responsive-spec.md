@@ -58,3 +58,11 @@ Mobile
 - Animate the open/close transition smoothly, while respecting reduced-motion preferences.
 - Let the expanded menu overlay page content without changing the header's reserved layout height.
 - Use the same light/dark theme behavior and 88%-opaque white/#22212C glass surfaces at every breakpoint.
+
+# 4. Homepage contact card
+
+- Make the “Let’s talk” card fill the available content width on mobile; retain its existing 20rem maximum width at the `md` breakpoint and above.
+
+# 5. Footer
+
+- Reduce the responsive footer top padding by 25%; leave its bottom padding unchanged.

@@ -39,7 +39,7 @@
   --spacing-filter-target-desktop: 1.75rem;
   --spacing-consultation-inner: clamp(2rem, 3.125vw, 2.5rem);
   --spacing-consultation-padding: clamp(1.5rem, 1.25rem + 0.625vw, 1.75rem);
-  --spacing-footer-top: clamp(3rem, 6.25vw, 5rem);
+  --spacing-footer-top: clamp(2.25rem, 4.6875vw, 3.75rem);
   --container-page: 70rem;
   --container-consultation: 20rem;
   --text-intro: clamp(1rem, 0.875rem + 0.46875vw, 1.25rem);
